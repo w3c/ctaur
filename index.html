@@ -18,11 +18,11 @@
       <h2>Introduction</h2>
       <section id="collaboration-tools">
         <h3>What are collaboration tools?</h3>
-        <p>For the purposes of this document, a <em>collaboration tool</em> is any software that supports features designed to facilitate the interactive creation, editing or annotation of content by multiple contributors. Examples of collaboration tools include</p>
+        <p>For the purposes of this document, a <dfn>collaboration tool</dfn> is any software that supports features designed to facilitate the interactive creation, editing or annotation of content by multiple contributors. Examples of collaboration tools include</p>
         <ul>
           <li>A Web-based text editor or word processor that enables multiple authors to edit content simultaneously, with each contributor's changes being integrated into the resulting text and propagated in real time to the collaborators.</li>
           <li>A tool that enables Web pages to be annotated with comments that are automatically made available to other users of the annotation service who access the same pages with suitable software. The software may be included in a user agent, or it may be supplied as an extension.</li>
-          <li>An Integrated Development Environment (IDE) that supports the collaborative editing of program source code in real time.</li>
+          <li>An Integrated Development Environment (<abbr title="Integrated development Environment">IDE</abbr>) that supports the collaborative editing of program source code in real time.</li>
           <li>A wiki that supports version control, for example by enabling authors to revert to prior versions of a page or to view the differences between two versions.</li>
         </ul>
       </section>
@@ -38,7 +38,7 @@
           <dt>Comparing revisions</dt>
           <dd>Some systems can display the differences between revisions of a text for purposes of comparison.</dd>
           <dt>Suggested changes</dt>
-          <dd>Some word processors can show changes (insertions, deletions and formatting-related modifications) made by collaborators, which an author can choose to accept or reject. These revisions are sometimes referred to as <em>suggested changes</em>. Each change may be accompanied by metadata, for example the identity of the author who made the change, and a time stamp.</dd>
+          <dd>Some word processors can show changes (insertions, deletions and formatting-related modifications) made by collaborators, which an author can choose to accept or reject. These revisions are sometimes referred to as <dfn>suggested changes</dfn>. Each change may be accompanied by metadata, for example the identity of the author who made the change, and a time stamp.</dd>
         </dl>
         <aside class="note">
           <p>Collaboration tools can differ widely in the nature of the content that may be read or edited, and in the manner in which it is presented to the user. For example, word processors provide a <q>what you see is what you get</q> (wysiwyg) interface based on a rendered view of the content, whereas editors designed for use with source code or markup language text do not. In the latter case, indentation and syntax highlighting may be the only visual cues to the structure of the code or markup available in the editing environment.</p>
@@ -55,7 +55,7 @@
     </section>
     <section>
       <h2>User need definition</h2>
-      <p>User needs relate to what a user needs from a particular application or platform to complete a task or to achieve a particular goal. User needs are dependent on the context in which an application is used, including the user's capabilities and the environmental conditions in which interaction with the interface takes place. For example, the cognitive demands imposed by interacting with the collaboration-related features of an application depend not only on the needs and capabilities of the user, including the possible presence of assistive technology, but also on the context. A collaborative task that the user can perform independently while working alone in a distraction-free environment may become cognitively burdensome if performed in a situation such as a meeting. Working with comments and suggested changes in a document may become more cognitively demanding if other authors are simultaneously editing the same content, and the user needs to be aware of their activities (e.g., to avoid introducing conflicting changes) while still performing the editing task.</p>
+      <p>User needs relate to what  conditions a particular application or platform must satisfy for a user with a disability to complete a task or to achieve a particular goal. User needs are dependent on the context in which an application is used, including the user's capabilities and the environmental conditions in which interaction with the interface takes place. For example, the cognitive demands imposed by interacting with the collaboration-related features of an application depend not only on the needs and capabilities of the user, including the possible presence of assistive technology, but also on the context. A collaborative task that the user can perform independently while working alone in a distraction-free environment may become cognitively burdensome if performed in a situation such as a meeting. Working with comments and suggested changes in a document may become more cognitively demanding if other authors are simultaneously editing the same content, and the user needs to be aware of their activities (e.g., to avoid introducing conflicting changes) while still performing the editing task.</p>
     </section>
     <section>
       <h2>Real-Time co-editing</h2>
@@ -63,7 +63,7 @@
         <li><strong>User Need 1:</strong> Users need to be able to discover the presence of collaborators who are reading or editing the content.</li>
         <li><strong>REQ 1:</strong> Provide a mode of operation in which <em>status messages</em> alert the user whenever a collaborator opens or closes an interactive session involving the same content that the user is accessing (e.g., the same document).</li>
       </ul>
-      <p class="note">Status messages need to be made available to assistive technologies, including screen readers. See <cite>Web Content Accessibility Guidelines (WCAG) 2.1</cite> [[wcag21]], success criterion 4.1.3, and the definition of <em>status message</em>.</p>
+      <p class="note">Status messages need to be made available to assistive technologies, including screen readers. See <cite>Web Content Accessibility Guidelines (WCAG) 2.1</cite> [[wcag21]], success criterion 4.1.3, and the associated definition of <em>status message</em>.</p>
       <ul>
         <li><strong>User Need 2:</strong> A screen reader user needs to be informed in real time of cahnges to the content made by collaborators.</li>
         <li><strong>REQ 2:</strong>Provide a mode of operation in which status messages inform the screen reader user of insertions, deletions or formatting-related changes made by collaborators as they occur.</li>
@@ -83,10 +83,10 @@
       <ul>
         <li><strong>User Need 6:</strong>Screen reader users need to be able to read text without being distracted by information about annotations.</li>
         <li><strong>REQ 6:</strong>Provide a mode of operation in which information about annotations is suppressed. This mode may be activated, for example, by a screen reader setting.</li>
-        <li><strong>User Need 7:</strong>A screen reader needs to be able to navigate between annotations (from previous to next) and to obtain a navigable list of annotations (e.g., a list of comments in a document or on a Web page), in order to read and respond to annotations efficiently.</li>
+        <li><strong>User Need 7:</strong>A screen reader needs to be able to navigate between annotations (from previous to next) and to obtain a navigable list of annotations (e.g., a list of comments in a word processor document or on a Web page), in order to read and respond to annotations efficiently.</li>
         <li><strong>REQ 7:</strong>Provide navigation functions and a means of obtaining a list of all the annotations associated with the content.</li>
-        <li><strong>User Need 8:</strong>Screen reader users need to be able to control the amount of information presented about annotations in order to prevent it from becoming overwhelming while they are reading, navigating and editing content.</li>
-        <li><strong>REQ 8:</strong>Provide options for the user to limit the amount of detail presented as each annotation is encountered. For example, it should be possible to suppress presentation of metadata, or replies to comments, or to alert the user only to the presence of the annotation without presenting the comment text.</li>
+        <li><strong>User Need 8:</strong>Screen reader users need to be able to control the amount of information presented about annotations to prevent it from becoming overwhelming while they are reading, navigating and editing content.</li>
+        <li><strong>REQ 8:</strong>Provide options for the user to limit the amount of detail presented as each annotation is encountered. For example, it should be possible to suppress presentation of metadata, or replies to comments, or to alert the user only to the presence of the annotation without presenting the metadata or comment text.</li>
       </ul>
     </section>
     <section>
@@ -95,7 +95,7 @@
         <h3>Suggested changes</h3>
         <ul>
           <li><strong>User Need 9:</strong> Screen reader users need to be able to read the text with information included about <em>suggested changes</em> (i.e., insertions, deletions or formatting modifications proposed by collaborators).</li>
-          <li><strong>REQ 9:</strong>Provide a mode of operation in which details of insertions, deletions and other revisions are presented by the screen reader as the user reads the content.</li>
+          <li><strong>REQ 9:</strong>Provide a mode of operation in which details of insertions, deletions and formatting changes are presented by the screen reader as the user reads the content.</li>
         </ul>
       </section>
     </section>
