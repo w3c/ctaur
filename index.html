@@ -1,0 +1,596 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+<meta charset="utf-8">
+<meta name="generator" content="ReSpec 32.1.9">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<style>
+.issue-label{text-transform:initial}
+.warning>p:first-child{margin-top:0}
+.warning{padding:.5em;border-left-width:.5em;border-left-style:solid}
+span.warning{padding:.1em .5em .15em}
+.issue.closed span.issue-number{text-decoration:line-through}
+.warning{border-color:#f11;border-width:.2em;border-style:solid;background:#fbe9e9}
+.warning-title:before{content:"⚠";font-size:1.3em;float:left;padding-right:.3em;margin-top:-.3em}
+li.task-list-item{list-style:none}
+input.task-list-item-checkbox{margin:0 .35em .25em -1.6em;vertical-align:middle}
+.issue a.respec-gh-label{padding:5px;margin:0 2px 0 2px;font-size:10px;text-transform:none;text-decoration:none;font-weight:700;border-radius:4px;position:relative;bottom:2px;border:none;display:inline-block}
+</style>
+<style>
+dfn{cursor:pointer}
+.dfn-panel{position:absolute;z-index:35;min-width:300px;max-width:500px;padding:.5em .75em;margin-top:.6em;font-family:"Helvetica Neue",sans-serif;font-size:small;background:#fff;color:#000;box-shadow:0 1em 3em -.4em rgba(0,0,0,.3),0 0 1px 1px rgba(0,0,0,.05);border-radius:2px}
+.dfn-panel:not(.docked)>.caret{position:absolute;top:-9px}
+.dfn-panel:not(.docked)>.caret::after,.dfn-panel:not(.docked)>.caret::before{content:"";position:absolute;border:10px solid transparent;border-top:0;border-bottom:10px solid #fff;top:0}
+.dfn-panel:not(.docked)>.caret::before{border-bottom:9px solid #a2a9b1}
+.dfn-panel *{margin:0}
+.dfn-panel b{display:block;color:#000;margin-top:.25em}
+.dfn-panel ul a[href]{color:#333}
+.dfn-panel>div{display:flex}
+.dfn-panel a.self-link{font-weight:700;margin-right:auto}
+.dfn-panel .marker{padding:.1em;margin-left:.5em;border-radius:.2em;text-align:center;white-space:nowrap;font-size:90%;color:#040b1c}
+.dfn-panel .marker.dfn-exported{background:#d1edfd;box-shadow:0 0 0 .125em #1ca5f940}
+.dfn-panel .marker.idl-block{background:#8ccbf2;box-shadow:0 0 0 .125em #0670b161}
+.dfn-panel a:not(:hover){text-decoration:none!important;border-bottom:none!important}
+.dfn-panel a[href]:hover{border-bottom-width:1px}
+.dfn-panel ul{padding:0}
+.dfn-panel li{margin-left:1em}
+.dfn-panel.docked{position:fixed;left:.5em;top:unset;bottom:2em;margin:0 auto;max-width:calc(100vw - .75em * 2 - .5em - .2em * 2);max-height:30vh;overflow:auto}
+</style>
+	  
+	  
+<title>Collaboration Accessibility User Requirements</title>
+    
+		
+    
+  
+<style id="respec-mainstyle">
+@keyframes pop{
+0%{transform:scale(1,1)}
+25%{transform:scale(1.25,1.25);opacity:.75}
+100%{transform:scale(1,1)}
+}
+:is(h1,h2,h3,h4,h5,h6,a) abbr{border:none}
+dfn{font-weight:700}
+a.internalDFN{color:inherit;border-bottom:1px solid #99c;text-decoration:none}
+a.externalDFN{color:inherit;border-bottom:1px dotted #ccc;text-decoration:none}
+a.bibref{text-decoration:none}
+.respec-offending-element:target{animation:pop .25s ease-in-out 0s 1}
+.respec-offending-element,a[href].respec-offending-element{text-decoration:red wavy underline}
+@supports not (text-decoration:red wavy underline){
+.respec-offending-element:not(pre){display:inline-block}
+.respec-offending-element{background:url(data:image/gif;base64,R0lGODdhBAADAPEAANv///8AAP///wAAACwAAAAABAADAEACBZQjmIAFADs=) bottom repeat-x}
+}
+#references :target{background:#eaf3ff;animation:pop .4s ease-in-out 0s 1}
+cite .bibref{font-style:normal}
+code{color:#c63501}
+th code{color:inherit}
+a[href].orcid{padding-left:4px;padding-right:4px}
+a[href].orcid>svg{margin-bottom:-2px}
+.toc a,.tof a{text-decoration:none}
+a .figno,a .secno{color:#000}
+ol.tof,ul.tof{list-style:none outside none}
+.caption{margin-top:.5em;font-style:italic}
+table.simple{border-spacing:0;border-collapse:collapse;border-bottom:3px solid #005a9c}
+.simple th{background:#005a9c;color:#fff;padding:3px 5px;text-align:left}
+.simple th a{color:#fff;padding:3px 5px;text-align:left}
+.simple th[scope=row]{background:inherit;color:inherit;border-top:1px solid #ddd}
+.simple td{padding:3px 10px;border-top:1px solid #ddd}
+.simple tr:nth-child(even){background:#f0f6ff}
+.section dd>p:first-child{margin-top:0}
+.section dd>p:last-child{margin-bottom:0}
+.section dd{margin-bottom:1em}
+.section dl.attrs dd,.section dl.eldef dd{margin-bottom:0}
+#issue-summary>ul{column-count:2}
+#issue-summary li{list-style:none;display:inline-block}
+details.respec-tests-details{margin-left:1em;display:inline-block;vertical-align:top}
+details.respec-tests-details>*{padding-right:2em}
+details.respec-tests-details[open]{z-index:999999;position:absolute;border:thin solid #cad3e2;border-radius:.3em;background-color:#fff;padding-bottom:.5em}
+details.respec-tests-details[open]>summary{border-bottom:thin solid #cad3e2;padding-left:1em;margin-bottom:1em;line-height:2em}
+details.respec-tests-details>ul{width:100%;margin-top:-.3em}
+details.respec-tests-details>li{padding-left:1em}
+.self-link:hover{opacity:1;text-decoration:none;background-color:transparent}
+aside.example .marker>a.self-link{color:inherit}
+.header-wrapper{display:flex;align-items:baseline}
+:is(h2,h3,h4,h5,h6):not(#toc>h2,#abstract>h2,#sotd>h2,.head>h2){position:relative;left:-.5em}
+:is(h2,h3,h4,h5,h6):not(#toch2)+a.self-link{color:inherit;order:-1;position:relative;left:-1.1em;font-size:1rem;opacity:.5}
+:is(h2,h3,h4,h5,h6)+a.self-link::before{content:"§";text-decoration:none;color:var(--heading-text)}
+:is(h2,h3)+a.self-link{top:-.2em}
+:is(h4,h5,h6)+a.self-link::before{color:#000}
+@media (max-width:767px){
+dd{margin-left:0}
+}
+@media print{
+.removeOnSave{display:none}
+}
+</style>
+<meta name="description" content="This document outlines various accessibility-related user needs, requirements and scenarios for collaboration tools. The tools of interest are distinguished by their support for one or more specific collaborative features. These features include real-time editing of content by multiple authors, the use of comments or annotations, and revision control. A Web-based text editor or word processor offering all of these features would be a central example of such a collaboration tool.">
+<style>
+var{position:relative;cursor:pointer}
+var[data-type]::after,var[data-type]::before{position:absolute;left:50%;top:-6px;opacity:0;transition:opacity .4s;pointer-events:none}
+var[data-type]::before{content:"";transform:translateX(-50%);border-width:4px 6px 0 6px;border-style:solid;border-color:transparent;border-top-color:#000}
+var[data-type]::after{content:attr(data-type);transform:translateX(-50%) translateY(-100%);background:#000;text-align:center;font-family:"Dank Mono","Fira Code",monospace;font-style:normal;padding:6px;border-radius:3px;color:#daca88;text-indent:0;font-weight:400}
+var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
+</style>
+<script id="initialUserConfig" type="application/json">{
+  "trace": true,
+  "useExperimentalStyles": true,
+  "doRDFa": "1.1",
+  "includePermalinks": true,
+  "permalinkEdge": true,
+  "permalinkHide": false,
+  "noRecTrack": true,
+  "tocIntroductory": true,
+  "lint": {
+    "no-unused-dfns": false
+  },
+  "specStatus": "ED",
+  "diffTool": "http://www.aptest.com/standards/htmldiff/htmldiff.pl",
+  "shortName": "caur",
+  "copyrightStart": "2022",
+  "license": "w3c-software-doc",
+  "editors": [
+    {
+      "name": "Jason White",
+      "mailto": "jjwhite@ets.org",
+      "company": "Educational Testing Service",
+      "companyURI": "http://www.ets.org/",
+      "w3cid": 74028,
+      "url": "mailto:jjwhite@ets.org"
+    }
+  ],
+  "group": "apa",
+  "github": "w3c/caur",
+  "maxTocLevel": 4,
+  "publishISODate": "2022-06-22T00:00:00.000Z",
+  "generatedSubtitle": "W3C Editor's Draft 22 June 2022"
+}</script>
+<link rel="stylesheet" href="https://www.w3.org/StyleSheets/TR/2021/W3C-ED"></head>
+  <body class="h-entry informative"><div class="head">
+    <p class="logos"><a class="logo" href="https://www.w3.org/"><img crossorigin="" alt="W3C" height="48" src="https://www.w3.org/StyleSheets/TR/2021/logos/W3C" width="72">
+  </a></p>
+    <h1 id="title" class="title">Collaboration Accessibility User Requirements</h1> 
+    <p id="w3c-state"><a href="https://www.w3.org/standards/types#ED">W3C Editor's Draft</a> <time class="dt-published" datetime="2022-06-22">22 June 2022</time></p>
+    <details open="">
+      <summary>More details about this document</summary>
+      <dl>
+        <dt>This version:</dt><dd>
+                <a class="u-url" href="https://w3c.github.io/caur/">https://w3c.github.io/caur/</a>
+              </dd>
+        <dt>Latest published version:</dt><dd>
+                <a href="https://www.w3.org/TR/caur/">https://www.w3.org/TR/caur/</a>
+              </dd>
+        <dt>Latest editor's draft:</dt><dd><a href="https://w3c.github.io/caur/">https://w3c.github.io/caur/</a></dd>
+        <dt>History:</dt><dd>
+                    <a href="https://github.com/w3c/caur/commits/">Commit history</a>
+                  </dd>
+        
+        
+        
+        
+        
+        <dt>Editor:</dt><dd class="editor p-author h-card vcard" data-editor-id="74028">
+    <a class="ed_mailto u-email email p-name" href="mailto:jjwhite@ets.org">Jason White</a> (<span class="p-org org h-org">Educational Testing Service</span>)
+  </dd>
+        
+        
+        <dt>Feedback:</dt><dd>
+        <a href="https://github.com/w3c/caur/">GitHub w3c/caur</a>
+        (<a href="https://github.com/w3c/caur/pulls/">pull requests</a>,
+        <a href="https://github.com/w3c/caur/issues/new/choose">new issue</a>,
+        <a href="https://github.com/w3c/caur/issues/">open issues</a>)
+      </dd>
+        
+        
+      </dl>
+    </details>
+    
+    
+    <p class="copyright">
+    <a href="https://www.w3.org/Consortium/Legal/ipr-notice#Copyright">Copyright</a>
+    ©
+    2022
+    
+    <a href="https://www.w3.org/"><abbr title="World Wide Web Consortium">W3C</abbr></a><sup>®</sup> (<a href="https://www.csail.mit.edu/"><abbr title="Massachusetts Institute of Technology">MIT</abbr></a>,
+    <a href="https://www.ercim.eu/"><abbr title="European Research Consortium for Informatics and Mathematics">ERCIM</abbr></a>, <a href="https://www.keio.ac.jp/">Keio</a>,
+    <a href="https://ev.buaa.edu.cn/">Beihang</a>). W3C
+    <a href="https://www.w3.org/Consortium/Legal/ipr-notice#Legal_Disclaimer">liability</a>,
+    <a href="https://www.w3.org/Consortium/Legal/ipr-notice#W3C_Trademarks">trademark</a> and
+    <a rel="license" href="https://www.w3.org/Consortium/Legal/2015/copyright-software-and-document" title="W3C Software and Document Notice and License">permissive document license</a> rules apply.
+  </p>
+    <hr title="Separator for header">
+  </div>
+    <section id="abstract" class="introductory"><h2>Abstract</h2>
+      <p>This document outlines various accessibility-related user needs, requirements and scenarios for collaboration tools. The tools of interest are distinguished by their support for one or more specific collaborative features. These features include real-time editing of content by multiple authors, the use of comments or annotations, and revision control. A Web-based text editor or word processor offering all of these features would be a central example of such a collaboration tool.</p>
+      <p>The accessibility-related user needs and corresponding requirements described in this document may be implemented in the collaboration tool itself, or elsewhere, for example in an assistive technology such as a screen reader. The scope of the discussion is not limited to problems that can be solved in the design or implementation of the collaboration tool. Instead, a holistic approach is taken that gives foremost priority to the user's perspective, leading to the identification of solutions that may be implemented by different components of the software involved in performing a collaborative task.</p>
+      <p>Although the user needs and associated requirements identified in this document <em>are not normative accessibility guidance</em>, they may influence the evolution of future accessibility guidelines, technical specifications, or features of collaboration tools and assistive technologies. They are relevant to software developers who contribute to any of these aspects of the collaborative experience.</p>
+    </section>
+    <section id="sotd" class="introductory"><h2>Status of This Document</h2><p><em>This section describes the status of this
+      document at the time of its publication. A list of current <abbr title="World Wide Web Consortium">W3C</abbr>
+      publications and the latest revision of this technical report can be found
+      in the <a href="https://www.w3.org/TR/"><abbr title="World Wide Web Consortium">W3C</abbr> technical reports index</a> at
+      https://www.w3.org/TR/.</em></p>
+    <p>
+    This document was published by the <a href="https://www.w3.org/groups/wg/apa">Accessible Platform Architectures Working Group</a> as
+    an Editor's Draft. 
+  </p><p>Publication as an Editor's Draft does not
+  imply endorsement by <abbr title="World Wide Web Consortium">W3C</abbr> and its Members. </p><p>
+    This is a draft document and may be updated, replaced or obsoleted by other
+    documents at any time. It is inappropriate to cite this document as other
+    than work in progress.
+    
+  </p><p>
+    
+        This document was produced by a group
+        operating under the
+        <a href="https://www.w3.org/Consortium/Patent-Policy/"><abbr title="World Wide Web Consortium">W3C</abbr> Patent
+          Policy</a>.
+      
+    
+                <abbr title="World Wide Web Consortium">W3C</abbr> maintains a
+                <a rel="disclosure" href="https://www.w3.org/groups/wg/apa/ipr">public list of any patent disclosures</a>
+          made in connection with the deliverables of
+          the group; that page also includes
+          instructions for disclosing a patent. An individual who has actual
+          knowledge of a patent which the individual believes contains
+          <a href="https://www.w3.org/Consortium/Patent-Policy/#def-essential">Essential Claim(s)</a>
+          must disclose the information in accordance with
+          <a href="https://www.w3.org/Consortium/Patent-Policy/#sec-Disclosure">section 6 of the <abbr title="World Wide Web Consortium">W3C</abbr> Patent Policy</a>.
+        
+  </p><p>
+                  This document is governed by the
+                  <a id="w3c_process_revision" href="https://www.w3.org/2021/Process-20211102/">2 November 2021 <abbr title="World Wide Web Consortium">W3C</abbr> Process Document</a>.
+                </p></section><nav id="toc"><h2 class="introductory" id="table-of-contents">Table of Contents</h2><ol class="toc"><li class="tocline"><a class="tocxref" href="#abstract">Abstract</a></li><li class="tocline"><a class="tocxref" href="#sotd">Status of This Document</a></li><li class="tocline"><a class="tocxref" href="#introduction"><bdi class="secno">1. </bdi>Introduction</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#collaboration-tools"><bdi class="secno">1.1 </bdi>What are collaboration tools?</a></li><li class="tocline"><a class="tocxref" href="#distinctive-features-of-collaboration-tools"><bdi class="secno">1.2 </bdi>Distinctive features of collaboration tools</a></li><li class="tocline"><a class="tocxref" href="#collaboration-tools-and-accessibility"><bdi class="secno">1.3 </bdi>Collaboration tools and accessibility</a></li></ol></li><li class="tocline"><a class="tocxref" href="#user-need-definition"><bdi class="secno">2. </bdi>User need definition</a></li><li class="tocline"><a class="tocxref" href="#real-time-co-editing"><bdi class="secno">3. </bdi>Real-Time co-editing</a></li><li class="tocline"><a class="tocxref" href="#annotations"><bdi class="secno">4. </bdi>Annotations</a></li><li class="tocline"><a class="tocxref" href="#version-control-features"><bdi class="secno">5. </bdi>Version control features</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#suggested-changes"><bdi class="secno">5.1 </bdi>Suggested changes</a></li><li class="tocline"><a class="tocxref" href="#presenting-differences-between-revisions"><bdi class="secno">5.2 </bdi>Presenting Differences Between Revisions</a></li></ol></li><li class="tocline"><a class="tocxref" href="#references"><bdi class="secno">A. </bdi>References</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#informative-references"><bdi class="secno">A.1 </bdi>Informative references</a></li></ol></li></ol></nav>
+    <section id="introduction"><div class="header-wrapper"><h2 id="x1-introduction"><bdi class="secno">1. </bdi>Introduction</h2><a class="self-link" href="#introduction" aria-label="Permalink for Section 1."></a></div>
+      
+      <section id="collaboration-tools"><div class="header-wrapper"><h3 id="x1-1-what-are-collaboration-tools"><bdi class="secno">1.1 </bdi>What are collaboration tools?</h3><a class="self-link" href="#collaboration-tools" aria-label="Permalink for Section 1.1"></a></div>
+        
+        <p>For the purposes of this document, a <dfn id="dfn-collaboration-tool" tabindex="0" aria-haspopup="dialog" data-dfn-type="dfn">collaboration tool</dfn> is any software that supports features designed to facilitate the interactive creation, editing or annotation of content by multiple contributors. Examples of collaboration tools include</p>
+        <ul>
+          <li>A Web-based text editor or word processor that enables multiple authors to edit content simultaneously, with each contributor's changes being integrated into the resulting text and propagated in real time to the collaborators.</li>
+          <li>A tool that enables Web pages to be annotated with comments that are automatically made available to other users of the annotation service who access the same pages with suitable software. The software may be included in a user agent, or it may be supplied as an extension.</li>
+          <li>An Integrated Development Environment (<abbr title="Integrated development Environment">IDE</abbr>) that supports the collaborative editing of program source code in real time.</li>
+          <li>A wiki that supports version control, for example by enabling authors to revert to prior versions of a page or to view the differences between two versions.</li>
+        </ul>
+      </section>
+      <section id="distinctive-features-of-collaboration-tools"><div class="header-wrapper"><h3 id="x1-2-distinctive-features-of-collaboration-tools"><bdi class="secno">1.2 </bdi>Distinctive features of collaboration tools</h3><a class="self-link" href="#distinctive-features-of-collaboration-tools" aria-label="Permalink for Section 1.2"></a></div>
+        
+        <p>This document addresses features unique to collaboration tools, rather than features which they share in common with other types of Web application or with application software in general. Indeed, any tool that has one or more of the features addressed here has the potential to benefit from consideration of the user needs and corresponding requirements elaborated in the sections that follow.</p>
+        <p>The distinctive capabilities of collaboration tools are illustrated by the examples in section <a href="#collaboration-tools" class="sec-ref"><bdi class="secno">1.1 </bdi>What are collaboration tools?</a>. For purposes of accessibility to people with disabilities, it is important to consider how these features may be manifest in the user interface of the tool. From this perspective, the distinguishing features may be described as follows.</p>
+        <dl>
+          <dt>Real-time co-editing</dt>
+          <dd>A feature enabling multiple authors to edit the same content simultaneously. The changes introduced by different authors are combined in real time, using algorithms such as operational transformation [<cite><a class="bibref" data-link-type="biblio" href="#bib-concurrency-control" title="Concurrency control in groupware systems">concurrency-control</a></cite>]. The combined changes are then made immediately visible in all of the participating authors' editing sessions. The effect is that each author can perceive, in real time, the changes made by collaborators, including the location of another author's focus within the content.</dd>
+          <dt>Annotation of content with comments</dt>
+          <dd>Some tools enable users to associate comments with parts of the content that is being read or edited. In systems such as word processors, replying to comments is supported, allowing threads of discussion to be associated with parts of a document.</dd>
+          <dt>Comparing revisions</dt>
+          <dd>Some systems can display the differences between revisions of a text for purposes of comparison.</dd>
+          <dt>Suggested changes</dt>
+          <dd>Some word processors can show changes (insertions, deletions and formatting-related modifications) made by collaborators, which an author can choose to accept or reject. These revisions are sometimes referred to as <dfn id="dfn-suggested-changes" tabindex="0" aria-haspopup="dialog" data-dfn-type="dfn">suggested changes</dfn> or as <dfn id="dfn-tracked-changes" tabindex="0" aria-haspopup="dialog" data-dfn-type="dfn">tracked changes</dfn>. Each change may be accompanied by metadata, for example the identity of the author who made the change, and a time stamp.</dd>
+        </dl>
+        <div class="note" role="note" id="issue-container-generatedID"><div role="heading" class="note-title marker" id="h-note" aria-level="4"><span>Note</span></div><aside class="">
+          <p>Collaboration tools can differ widely in the nature of the content that may be read or edited, and in the manner in which it is presented to the user. For example, word processors provide a <q>what you see is what you get</q> (<abbr title="what you see is what you get">wysiwyg</abbr>) interface based on a rendered view of the content, whereas editors designed for use with source code or markup language text do not. In the latter case, indentation and syntax highlighting may be the only visual cues to the structure of the code or markup available in the editing environment.</p>
+          <p>Collaboration tools that support editing of graphics, mathematical notation, or other content types are also within the scope of this document. However, only the collaboration-related aspects of such systems are addressed here. The accessibility issues arising from creating and editing these types of content are not considered, as they are separate problems from the user needs associated with the collaborative features of the tools.</p>
+        </aside></div>
+      </section>
+      <section id="collaboration-tools-and-accessibility"><div class="header-wrapper"><h3 id="x1-3-collaboration-tools-and-accessibility"><bdi class="secno">1.3 </bdi>Collaboration tools and accessibility</h3><a class="self-link" href="#collaboration-tools-and-accessibility" aria-label="Permalink for Section 1.3"></a></div>
+        
+        <p>By following established guidance such as that of <cite>Web Content Accessibility Guidelines (WCAG)</cite> [<cite><a class="bibref" data-link-type="biblio" href="#bib-wcag21" title="Web Content Accessibility Guidelines (WCAG) 2.1">wcag21</a></cite>], designers of collaboration tools can ensure that their user interfaces are <em>perceivable</em> to and <em>operable</em> by a wide range of users with disabilities. However, implementing current guidelines is not sufficient by itself to ensure that such a user interface is <em>understandable</em>, or that it can be used efficiently to complete collaborative tasks.</p>
+        <p>The collaboration-related features of these tools can impose significant cognitive demands on the user. This is especially so if a screen reader is used, and the interactive elements of the application are presented serially in speech or braille. For example, a screen reader may present details of suggested changes and comments while the user is reading a document in a word processor. Details of collaborators' activities in the document may be presented in real time. The screen reader user may also be expected to communicate with collaborators (e.g., in a meeting) while undertaking editing tasks. Moreover, at any time, incoming changes made by collaborators may alter the text that the user is reading or editing.</p>
+        <p>Due to the cognitive demands created by collaboration tools in the practical and social contexts in which they are used, strategies for improving accessibility are desirable that extend beyond current <abbr title="World Wide Web Consortium">W3C</abbr> guidance.</p>
+        <div class="note" id="issue-container-generatedID-0"><div role="heading" class="ednote-title marker" id="h-ednote" aria-level="4"><span>Editor's note</span></div><p class="">Which aspects of the cognitive complexity are most challenging to a variety of users with learning or cognitive disabilities? Should we clarify further in the text that sensory disability as such (perception) is not the issue here; it is fundamentally a cognitive issue even for screen reader users (whether or not any cognitive disability is involved). Also, are there specific issues of importance to users of captions or sign language in dividing attention between communication and use of the collaboration tools?</p></div>
+      </section>
+    </section>
+    <section id="user-need-definition"><div class="header-wrapper"><h2 id="x2-user-need-definition"><bdi class="secno">2. </bdi>User need definition</h2><a class="self-link" href="#user-need-definition" aria-label="Permalink for Section 2."></a></div>
+      
+      <p>User needs relate to what  conditions a particular application or platform must satisfy for a user with a disability to complete a task or to achieve a particular goal. User needs are dependent on the context in which an application is used, including the user's capabilities and the environmental conditions in which interaction with the interface takes place. For example, the cognitive demands imposed by interacting with the collaboration-related features of an application depend not only on the needs and capabilities of the user, including the possible presence of assistive technology, but also on the context. A collaborative task that the user can perform independently while working alone in a distraction-free environment may become cognitively burdensome if performed in a situation such as a meeting. Working with comments and suggested changes in a document may become more cognitively demanding if other authors are simultaneously editing the same content, and the user needs to be aware of their activities (e.g., to avoid introducing conflicting changes) while still performing the editing task.</p>
+    </section>
+    <section id="real-time-co-editing"><div class="header-wrapper"><h2 id="x3-real-time-co-editing"><bdi class="secno">3. </bdi>Real-Time co-editing</h2><a class="self-link" href="#real-time-co-editing" aria-label="Permalink for Section 3."></a></div>
+      
+      <ul>
+        <li><strong>User Need 1:</strong> Users need to be able to discover the presence of collaborators who are reading or editing the content.</li>
+        <li><strong>REQ 1:</strong> Provide a mode of operation in which <em>status messages</em> alert the user whenever a collaborator opens or closes an interactive session involving the same content that the user is accessing (e.g., the same document).</li>
+      </ul>
+      <div class="note" role="note" id="issue-container-generatedID-1"><div role="heading" class="note-title marker" id="h-note-0" aria-level="3"><span>Note</span></div><p class="">Status messages need to be made available to assistive technologies, including screen readers. See <cite>Web Content Accessibility Guidelines (WCAG) 2.1</cite> [<cite><a class="bibref" data-link-type="biblio" href="#bib-wcag21" title="Web Content Accessibility Guidelines (WCAG) 2.1">wcag21</a></cite>], success criterion 4.1.3, and the associated definition of <em>status message</em>.</p></div>
+      <ul>
+        <li><strong>User Need 2:</strong> A screen reader user needs to be informed in real time of changes to the content made by collaborators.</li>
+        <li><strong>REQ 2:</strong>Provide a mode of operation in which status messages inform the screen reader user of insertions, deletions or formatting-related changes made by collaborators as they occur.</li>
+        <li><strong>User Need 3:</strong> Screen reader users need to be able to perform reading or editing tasks without distracting status messages.</li>
+        <li><strong>REQ 3:</strong> Provide a mode of operation in which status messages informing the user of the presence or activities of collaborators are suppressed. This may be achieved by allowing the user selectively to enable and disable specific types of status message, or all such messages, for example in screen reader or application settings.</li>
+        <li><strong>User Need 4:</strong>A screen reader or screen magnifier user needs to follow changes introduced by a collaborator as they are made.</li>
+        <li><strong>REQ 4:</strong>Provide a function that moves the user's insertion cursor to the location in the content at which a collaborator is editing.</li>
+      </ul>
+    </section>
+    <section id="annotations"><div class="header-wrapper"><h2 id="x4-annotations"><bdi class="secno">4. </bdi>Annotations</h2><a class="self-link" href="#annotations" aria-label="Permalink for Section 4."></a></div>
+      
+      <ul>
+        <li><strong>User Need 5:</strong> A screen reader user needs to be informed of annotations (e.g., comments) associated with parts of the content, such as words, sentences or paragraphs in a document, or lines of code reviewed by a collaborator in a software development project.</li>
+        <li><strong>REQ 5:</strong>Ensure that information about annotations is conveyed to screen readers and other assistive technologies, including the boundaries of the text to which the annotation applies, metadata associated with the annotation, and any comment text.</li>
+      </ul>
+      <div class="note" role="note" id="issue-container-generatedID-2"><div role="heading" class="note-title marker" id="h-note-1" aria-level="3"><span>Note</span></div><p class="">See <cite>Web Content Accessibility Guidelines (WCAG) 2.1</cite> [<cite><a class="bibref" data-link-type="biblio" href="#bib-wcag21" title="Web Content Accessibility Guidelines (WCAG) 2.1">wcag21</a></cite>], success criterion 1.3.1.</p></div>
+      <ul>
+        <li><strong>User Need 6:</strong>Screen reader users need to be able to read text without being distracted by information about annotations.</li>
+        <li><strong>REQ 6:</strong>Provide a mode of operation in which information about annotations is suppressed. This mode may be activated, for example, by a screen reader setting.</li>
+        <li><strong>User Need 7:</strong>A screen reader needs to be able to navigate between annotations (from previous to next) and to obtain a navigable list of annotations (e.g., a list of comments in a word processor document or on a Web page), in order to read and respond to annotations efficiently.</li>
+        <li><strong>REQ 7:</strong>Provide navigation functions and a means of obtaining a list of all the annotations associated with the content.</li>
+        <li><strong>User Need 8:</strong>Screen reader users need to be able to control the amount of information presented about annotations to prevent it from becoming overwhelming while they are reading, navigating and editing content.</li>
+        <li><strong>REQ 8:</strong>Provide options for the user to limit the amount of detail presented as each annotation is encountered. For example, it should be possible to suppress presentation of metadata, or replies to comments, or to alert the user only to the presence of the annotation without presenting the metadata or comment text.</li>
+      </ul>
+    </section>
+    <section id="version-control-features"><div class="header-wrapper"><h2 id="x5-version-control-features"><bdi class="secno">5. </bdi>Version control features</h2><a class="self-link" href="#version-control-features" aria-label="Permalink for Section 5."></a></div>
+      
+      <section id="suggested-changes"><div class="header-wrapper"><h3 id="x5-1-suggested-changes"><bdi class="secno">5.1 </bdi>Suggested changes</h3><a class="self-link" href="#suggested-changes" aria-label="Permalink for Section 5.1"></a></div>
+        
+        <ul>
+          <li><strong>User Need 9:</strong> Screen reader users need to be able to read the text with information included about <em>suggested changes</em> (i.e., insertions, deletions or formatting modifications proposed by collaborators).</li>
+          <li><strong>REQ 9:</strong>Provide a mode of operation in which details of insertions, deletions and formatting changes are presented by the screen reader as the user reads the content.</li>
+        </ul>
+      </section>
+      <section id="presenting-differences-between-revisions"><div class="header-wrapper"><h3 id="x5-2-presenting-differences-between-revisions"><bdi class="secno">5.2 </bdi>Presenting Differences Between Revisions</h3><a class="self-link" href="#presenting-differences-between-revisions" aria-label="Permalink for Section 5.2"></a></div>
+        
+        <ul>
+          <li><strong>User Need 10:</strong> Users need to be able to compare revisions in meaningful units (words, sentences, lines, etc.), according to the nature of the content, to maximize comprehension.</li>
+          <li><strong>REQ 10:</strong>Present differences in a manner that is appropriate to the type of content. For example, program source code should be presented with line-by-line differences, whereas documents (i.e., natural language texts) should be presented with differences shown word-by-word or sentence-by-sentence.</li>
+        </ul>
+      </section>
+    </section>
+  
+
+<section id="references" class="appendix"><div class="header-wrapper"><h2 id="a-references"><bdi class="secno">A. </bdi>References</h2><a class="self-link" href="#references" aria-label="Permalink for Appendix A."></a></div><section id="informative-references"><div class="header-wrapper"><h3 id="a-1-informative-references"><bdi class="secno">A.1 </bdi>Informative references</h3><a class="self-link" href="#informative-references" aria-label="Permalink for Appendix A.1"></a></div>
+    
+    <dl class="bibliography"><dt id="bib-concurrency-control">[concurrency-control]</dt><dd>
+      <cite>Concurrency control in groupware systems</cite>. Clarence A. Ellis; Simon J. Gibbs.  Proceedings of the 1989 ACM SIGMOD international conference on Management of data. 1989. 
+    </dd><dt id="bib-wcag21">[wcag21]</dt><dd>
+      <a href="https://www.w3.org/TR/WCAG21/"><cite>Web Content Accessibility Guidelines (WCAG) 2.1</cite></a>. Andrew Kirkpatrick; Joshue O'Connor; Alastair Campbell; Michael Cooper.  W3C. 5 June 2018. W3C Recommendation. URL: <a href="https://www.w3.org/TR/WCAG21/">https://www.w3.org/TR/WCAG21/</a>
+    </dd></dl>
+  </section></section><p role="navigation" id="back-to-top">
+    <a href="#title"><abbr title="Back to Top">↑</abbr></a>
+  </p><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-dfn-collaboration-tool" aria-label="Links in this document to definition: collaboration tool">
+      <span class="caret"></span>
+      <div>
+        <a class="self-link" href="#dfn-collaboration-tool" aria-label="Permalink for definition: collaboration tool. Activate to close this dialog.">Permalink</a>
+         
+      </div>
+      <p><b>Referenced in:</b></p>
+      <ul>
+      <li>Not referenced in this document.</li>
+    </ul>
+    </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-dfn-suggested-changes" aria-label="Links in this document to definition: suggested changes">
+      <span class="caret"></span>
+      <div>
+        <a class="self-link" href="#dfn-suggested-changes" aria-label="Permalink for definition: suggested changes. Activate to close this dialog.">Permalink</a>
+         
+      </div>
+      <p><b>Referenced in:</b></p>
+      <ul>
+      <li>Not referenced in this document.</li>
+    </ul>
+    </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-dfn-tracked-changes" aria-label="Links in this document to definition: tracked changes">
+      <span class="caret"></span>
+      <div>
+        <a class="self-link" href="#dfn-tracked-changes" aria-label="Permalink for definition: tracked changes. Activate to close this dialog.">Permalink</a>
+         
+      </div>
+      <p><b>Referenced in:</b></p>
+      <ul>
+      <li>Not referenced in this document.</li>
+    </ul>
+    </div><script id="respec-dfn-panel">(() => {
+// @ts-check
+if (document.respec) {
+  document.respec.ready.then(setupPanel);
+} else {
+  setupPanel();
+}
+
+function setupPanel() {
+  const listener = panelListener();
+  document.body.addEventListener("keydown", listener);
+  document.body.addEventListener("click", listener);
+}
+
+function panelListener() {
+  /** @type {HTMLElement} */
+  let panel = null;
+  return event => {
+    const { target, type } = event;
+
+    if (!(target instanceof HTMLElement)) return;
+
+    // For keys, we only care about Enter key to activate the panel
+    // otherwise it's activated via a click.
+    if (type === "keydown" && event.key !== "Enter") return;
+
+    const action = deriveAction(event);
+
+    switch (action) {
+      case "show": {
+        hidePanel(panel);
+        /** @type {HTMLElement} */
+        const dfn = target.closest("dfn, .index-term");
+        panel = document.getElementById(`dfn-panel-for-${dfn.id}`);
+        const coords = deriveCoordinates(event);
+        displayPanel(dfn, panel, coords);
+        break;
+      }
+      case "dock": {
+        panel.style.left = null;
+        panel.style.top = null;
+        panel.classList.add("docked");
+        break;
+      }
+      case "hide": {
+        hidePanel(panel);
+        panel = null;
+        break;
+      }
+    }
+  };
+}
+
+/**
+ * @param {MouseEvent|KeyboardEvent} event
+ */
+function deriveCoordinates(event) {
+  const target = /** @type HTMLElement */ (event.target);
+
+  // We prevent synthetic AT clicks from putting
+  // the dialog in a weird place. The AT events sometimes
+  // lack coordinates, so they have clientX/Y = 0
+  const rect = target.getBoundingClientRect();
+  if (
+    event instanceof MouseEvent &&
+    event.clientX >= rect.left &&
+    event.clientY >= rect.top
+  ) {
+    // The event probably happened inside the bounding rect...
+    return { x: event.clientX, y: event.clientY };
+  }
+
+  // Offset to the middle of the element
+  const x = rect.x + rect.width / 2;
+  // Placed at the bottom of the element
+  const y = rect.y + rect.height;
+  return { x, y };
+}
+
+/**
+ * @param {Event} event
+ */
+function deriveAction(event) {
+  const target = /** @type {HTMLElement} */ (event.target);
+  const hitALink = !!target.closest("a");
+  if (target.closest("dfn:not([data-cite]), .index-term")) {
+    return hitALink ? "none" : "show";
+  }
+  if (target.closest(".dfn-panel")) {
+    if (hitALink) {
+      return target.classList.contains("self-link") ? "hide" : "dock";
+    }
+    const panel = target.closest(".dfn-panel");
+    return panel.classList.contains("docked") ? "hide" : "none";
+  }
+  if (document.querySelector(".dfn-panel:not([hidden])")) {
+    return "hide";
+  }
+  return "none";
+}
+
+/**
+ * @param {HTMLElement} dfn
+ * @param {HTMLElement} panel
+ * @param {{ x: number, y: number }} clickPosition
+ */
+function displayPanel(dfn, panel, { x, y }) {
+  panel.hidden = false;
+  // distance (px) between edge of panel and the pointing triangle (caret)
+  const MARGIN = 20;
+
+  const dfnRects = dfn.getClientRects();
+  // Find the `top` offset when the `dfn` can be spread across multiple lines
+  let closestTop = 0;
+  let minDiff = Infinity;
+  for (const rect of dfnRects) {
+    const { top, bottom } = rect;
+    const diffFromClickY = Math.abs((top + bottom) / 2 - y);
+    if (diffFromClickY < minDiff) {
+      minDiff = diffFromClickY;
+      closestTop = top;
+    }
+  }
+
+  const top = window.scrollY + closestTop + dfnRects[0].height;
+  const left = x - MARGIN;
+  panel.style.left = `${left}px`;
+  panel.style.top = `${top}px`;
+
+  // Find if the panel is flowing out of the window
+  const panelRect = panel.getBoundingClientRect();
+  const SCREEN_WIDTH = Math.min(window.innerWidth, window.screen.width);
+  if (panelRect.right > SCREEN_WIDTH) {
+    const newLeft = Math.max(MARGIN, x + MARGIN - panelRect.width);
+    const newCaretOffset = left - newLeft;
+    panel.style.left = `${newLeft}px`;
+    /** @type {HTMLElement} */
+    const caret = panel.querySelector(".caret");
+    caret.style.left = `${newCaretOffset}px`;
+  }
+
+  // As it's a dialog, we trap focus.
+  // TODO: when <dialog> becomes a implemented, we should really
+  // use that.
+  trapFocus(panel, dfn);
+}
+
+/**
+ * @param {HTMLElement} panel
+ * @param {HTMLElement} dfn
+ * @returns
+ */
+function trapFocus(panel, dfn) {
+  /** @type NodeListOf<HTMLAnchorElement> elements */
+  const anchors = panel.querySelectorAll("a[href]");
+  // No need to trap focus
+  if (!anchors.length) return;
+
+  // Move focus to first anchor element
+  const first = anchors.item(0);
+  first.focus();
+
+  const trapListener = createTrapListener(anchors, panel, dfn);
+  panel.addEventListener("keydown", trapListener);
+
+  // Hiding the panel releases the trap
+  const mo = new MutationObserver(records => {
+    const [record] = records;
+    const target = /** @type HTMLElement */ (record.target);
+    if (target.hidden) {
+      panel.removeEventListener("keydown", trapListener);
+      mo.disconnect();
+    }
+  });
+  mo.observe(panel, { attributes: true, attributeFilter: ["hidden"] });
+}
+
+/**
+ *
+ * @param {NodeListOf<HTMLAnchorElement>} anchors
+ * @param {HTMLElement} panel
+ * @param {HTMLElement} dfn
+ * @returns
+ */
+function createTrapListener(anchors, panel, dfn) {
+  const lastIndex = anchors.length - 1;
+  let currentIndex = 0;
+  return event => {
+    switch (event.key) {
+      // Hitting "Tab" traps us in a nice loop around elements.
+      case "Tab": {
+        event.preventDefault();
+        currentIndex += event.shiftKey ? -1 : +1;
+        if (currentIndex < 0) {
+          currentIndex = lastIndex;
+        } else if (currentIndex > lastIndex) {
+          currentIndex = 0;
+        }
+        anchors.item(currentIndex).focus();
+        break;
+      }
+
+      // Hitting "Enter" on an anchor releases the trap.
+      case "Enter":
+        hidePanel(panel);
+        break;
+
+      // Hitting "Escape" returns focus to dfn.
+      case "Escape":
+        hidePanel(panel);
+        dfn.focus();
+        return;
+    }
+  };
+}
+
+/** @param {HTMLElement} panel */
+function hidePanel(panel) {
+  if (!panel) return;
+  panel.hidden = true;
+  panel.classList.remove("docked");
+}
+})()</script><script src="https://www.w3.org/scripts/TR/2021/fixup.js"></script></body></html>
