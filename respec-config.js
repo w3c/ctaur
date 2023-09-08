@@ -49,7 +49,14 @@ var respecConfig = {
 			name: "Janina Sajka",
 			url: "http://rednote.net/",
 			w3cid: 33688
-		}
+		},
+		{
+			name: "Scott Hollier",
+			mailto: "scott.hollier@accessibility.org.au",
+			company: "Centre for Accessibility Australia",
+			companyURI: "https://www.accessibility.org.au/",
+			w3cid: 43274
+		},
 	],
 
 	// authors, add as many as you like.
