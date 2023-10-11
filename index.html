@@ -1,6 +1,6 @@
 <!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 <meta charset="utf-8">
-<meta name="generator" content="ReSpec 34.1.6">
+<meta name="generator" content="ReSpec 34.1.8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <style>
 .issue-label{text-transform:initial}
@@ -149,15 +149,15 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
   "group": "apa",
   "github": "w3c/ctaur",
   "maxTocLevel": 4,
-  "publishISODate": "2023-09-08T00:00:00.000Z",
-  "generatedSubtitle": "W3C Editor's Draft 08 September 2023"
+  "publishISODate": "2023-10-11T00:00:00.000Z",
+  "generatedSubtitle": "W3C Editor's Draft 11 October 2023"
 }</script>
 <link rel="stylesheet" href="https://www.w3.org/StyleSheets/TR/2021/W3C-ED"></head>
   <body class="h-entry informative"><div class="head">
     <p class="logos"><a class="logo" href="https://www.w3.org/"><img crossorigin="" alt="W3C" height="48" src="https://www.w3.org/StyleSheets/TR/2021/logos/W3C" width="72">
   </a></p>
     <h1 id="title" class="title">Collaboration Tools Accessibility User Requirements</h1> 
-    <p id="w3c-state"><a href="https://www.w3.org/standards/types#ED">W3C Editor's Draft</a> <time class="dt-published" datetime="2023-09-08">08 September 2023</time></p>
+    <p id="w3c-state"><a href="https://www.w3.org/standards/types#ED">W3C Editor's Draft</a> <time class="dt-published" datetime="2023-10-11">11 October 2023</time></p>
     <details open="">
       <summary>More details about this document</summary>
       <dl>
@@ -214,7 +214,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
   </div>
     <section id="abstract" class="introductory"><h2>Abstract</h2>
       <p>This document outlines various accessibility-related user needs, requirements and scenarios for web-based collaboration tools. These typically include one or more specific collaborative features such as real-time content editing by multiple authors, support for comments annotations, and revision control. The Cloud-based office application suites from Google and Microsoft are well-known examples of such collaboration tools.</p>
-      <p>The accessibility user needs and requirements described in this document may be implemented in the collaboration tool itself, or in an assistive technology application such as a screen reader or screen magnifier. We take a holistic approach to give foremost priority to the user^apos;s perspective, leading to the identification of solutions that may be implemented by different components of the software involved in performing a collaborative task.</p>
+      <p>The accessibility user needs and requirements described in this document may be implemented in the collaboration tool itself, or in an assistive technology application such as a screen reader or screen magnifier. We take a holistic approach to give foremost priority to the user's perspective, leading to the identification of solutions that may be implemented by different components of the software involved in performing a collaborative task.</p>
       <p>Although the user needs and requirements identified in this document <em>are non-normative</em>, they may influence the development of future accessibility guidelines, normative technical specifications, or features of collaboration tools and assistive technologies. They are relevant to software developers who contribute to the collaborative experience.</p>
     </section>
     <section id="sotd" class="introductory"><h2>Status of This Document</h2><p><em>This section describes the status of this
@@ -264,7 +264,8 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
       
       <section id="collaboration-tools"><div class="header-wrapper"><h3 id="x1-1-what-are-collaboration-tools"><bdi class="secno">1.1 </bdi>What are collaboration tools?</h3><a class="self-link" href="#collaboration-tools" aria-label="Permalink for Section 1.1"></a></div>
         
-        <p>For the purposes of this document, a <dfn id="dfn-collaboration-tool" tabindex="0" aria-haspopup="dialog" data-dfn-type="dfn">collaboration tool</dfn> is any software that supports features designed to facilitate the interactive creation, editing or annotation of content by multiple contributors, whether working in simultaneous collaboration or asynchronously. Examples of collaboration tools include</p>
+/standard cont
+<p>For the purposes of this document, a <dfn id="dfn-collaboration-tool" tabindex="0" aria-haspopup="dialog" data-dfn-type="dfn">collaboration tool</dfn> is any software that supports features designed to facilitate the interactive creation, editing or annotation of content by multiple contributors, whether working in simultaneous collaboration or asynchronously. Examples of collaboration tools include</p>
         <ul>
           <li>A Web-based text editor or word processor that enables multiple authors to edit content simultaneously, with each contributor's changes being integrated into the resulting text and propagated in real time to the collaborators.</li>
           <li>A tool that enables Web pages to be annotated with comments that are automatically made available to other users of the annotation service who access the same pages with suitable software. The software may be included in a user agent, or it may be supplied as an extension.</li>
@@ -285,17 +286,21 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
           <dd>Some systems can display the differences between revisions of a text for purposes of comparison.</dd>
           <dt>Suggested changes</dt>
           <dd>Some word processors can show changes (insertions, deletions and formatting-related modifications) made by collaborators, which an author can choose to accept or reject. These revisions are sometimes referred to as <dfn id="dfn-suggested-changes" tabindex="0" aria-haspopup="dialog" data-dfn-type="dfn">suggested changes</dfn> or as <dfn id="dfn-tracked-changes" tabindex="0" aria-haspopup="dialog" data-dfn-type="dfn">tracked changes</dfn>. Each change may be accompanied by metadata, for example the identity of the author who made the change, and a time stamp.</dd>
-        </dl>
-        <div class="note" role="note" id="issue-container-generatedID-0"><div role="heading" class="note-title marker" id="h-note" aria-level="4"><span>Note</span></div><aside class="">
-          <p>Collaboration tools can differ widely in the nature of the content that may be read or edited, and in the manner in which it is presented to the user. For example, word processors provide a <q>what you see is what you get</q> (<abbr title="what you see is what you get">wysiwyg</abbr>) interface based on a rendered view of the content, whereas editors designed for use with source code or markup language text do not. In the latter case, indentation and syntax highlighting may be the only visual cues to the structure of the code or markup available in the editing environment.</p>
+	</dl>
+
+          <p>Collaboration tools differ widely in the nature of content that may be edited. They also differ widely in the user interfaces presented to users. For example, word processors typically provide a <q>what you see is what you get</q> (<abbr title="what you see is what you get">wysiwyg</abbr>) interface based on a rendered view of the content, whereas editors designed for use with source code or markup language text do not. In the latter case, indentation and syntax highlighting may be the only visual cues to the structure of the code or markup available in the editing environment.</p>
+	  <p>We prefer collaboration tools that utilize standard menu organization and typical keyboard commands now well known to users from the stand-alone desktop environment. Standard controls require far less learning from the user, whereas specific accessibility modes with custom keyboard commands, and with menus that shift their location on screen pose significantly steep learning challenges to most users with disabilities, not just users with cognitive and learning disabilities.</p>
           <p>Collaboration tools that support editing of graphics, mathematical notation, or other content types are also within the scope of this document. However, only the collaboration-related aspects of such systems are addressed here. The accessibility issues arising from creating and editing these types of content are not considered, as they are separate problems from the user needs associated with the collaborative features of the tools.</p>
-        </aside></div>
+	  <p>Nevertheless it is important that collaborative tools support the full range of editing functions associated with making web content accessible. Among others this would include the ability to add
+	  headings, provide alternative text for images and add captions to videos.</p>
       </section>
-      <section id="collaboration-tools-and-accessibility"><div class="header-wrapper"><h3 id="x1-3-collaboration-tools-and-accessibility"><bdi class="secno">1.3 </bdi>Collaboration tools and accessibility</h3><a class="self-link" href="#collaboration-tools-and-accessibility" aria-label="Permalink for Section 1.3"></a></div>
-        
+            <section id="collaboration-tools-and-accessibility"><div class="header-wrapper"><h3 id="x1-3-collaboration-tools-and-accessibility"><bdi class="secno">1.3 </bdi>Collaboration tools and accessibility</h3><a class="self-link" href="#collaboration-tools-and-accessibility" aria-label="Permalink for Section 1.3"></a></div>
+		            
 	<p>By following established guidance such as that of <cite>Web Content Accessibility Guidelines (WCAG)</cite> [<cite><a class="bibref" data-link-type="biblio" href="#bib-wcag21" title="Web Content Accessibility Guidelines (WCAG) 2.1">wcag21</a></cite>], designers of collaboration tools can help ensure that their user interfaces are <em>perceivable</em> to and <em>operable</em> by a wide range of users with disabilities. However, implementing current guidelines is not sufficient by itself to ensure that such a user interface is <em>understandable</em>, or that it can be used efficiently to complete collaborative tasks. However conforming to WCAG may well be insufficient for collaborative environments. For example WCAG does not inform automated interface simplification control7mdash;a general web accessibility requirement being considered in APA's <a href="https://www.w3.org/WAI/APA/task-forces/adapt/">WAI-Adapt Task Force</a>.</p>
         <p>The collaboration features of these tools are necessarily complex. This can impose significant cognitive demands on many users, not only users with specialized accessibility requirements. This is especially true  for screen reader users, screen magnification and color contrast assistive technologies, as well as for persons living with various cognitive and learning disabilities. Many users cannot track updates on multiple locations simultaneously, Rather, they necessarily must view and comprehend the interactive elements of the application's features  sequentially, for example in speech or braille for screen reader users. A screen reader or magnifier used in a collaborative application may well present suggested changes and comments in one section of the screen while the user is reading a document in a word processor. The user may also be expected also to be communicating verbally with fellow collaborators (e.g., in a meeting) while undertaking editing tasks. Moreover, at any time, incoming changes made by collaborators may alter the text that the user is reading or editing in real time.</p>
         <p>Due to the cognitive demands created by collaboration tools in the practical and social contexts in which they are used, strategies for improving accessibility are desirable that extend beyond current <abbr title="World Wide Web Consortium">W3C</abbr> guidance.</p>
+	<p>Thus when we talk about collaborative tools we necessarily must consider accessibility burdens imposed by their
+	concomitant complexity. In truth collaborative tools are necessarily complex interfaces for all users, and not only persons with various disabilities. A fairly common example is the use of arbitrary color to flag edits put forth by different collaborators. However, identifying collaborators only by colorization  violates WCAG 2.2 Success Criterion 1.4.1 on appropriate accessible <a href="https://www.w3.org/WAI/WCAG22/Understanding/use-of-color">Use of Color</a>.</p>
       </section>
     </section>
     <section id="user-need-definition"><div class="header-wrapper"><h2 id="x2-user-need-definition"><bdi class="secno">2. </bdi>User need definition</h2><a class="self-link" href="#user-need-definition" aria-label="Permalink for Section 2."></a></div>
@@ -308,7 +313,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
         <li><strong>User Need 1:</strong> Users need to be able to discover the presence of collaborators who are reading or editing the content.</li>
         <li><strong>REQ 1:</strong> Provide a mode of operation in which <em>status messages</em> alert the user whenever a collaborator opens or closes an interactive session involving the same content that the user is accessing (e.g., the same document).</li>
       </ul>
-      <div class="note" role="note" id="issue-container-generatedID-1"><div role="heading" class="note-title marker" id="h-note-0" aria-level="3"><span>Note</span></div><p class="">WCAG requires that status messages be made available to assistive technologies. See <cite>Web Content Accessibility Guidelines (WCAG) 2.1</cite> [<cite><a class="bibref" data-link-type="biblio" href="#bib-wcag21" title="Web Content Accessibility Guidelines (WCAG) 2.1">wcag21</a></cite>], success criterion 4.1.3, and the associated definition of <em>status message</em>.</p></div>
+      <div class="note" role="note" id="issue-container-generatedID-0"><div role="heading" class="note-title marker" id="h-note" aria-level="3"><span>Note</span></div><p class="">WCAG requires that status messages be made available to assistive technologies. See <cite>Web Content Accessibility Guidelines (WCAG) 2.1</cite> [<cite><a class="bibref" data-link-type="biblio" href="#bib-wcag21" title="Web Content Accessibility Guidelines (WCAG) 2.1">wcag21</a></cite>], success criterion 4.1.3, and the associated definition of <em>status message</em>.</p></div>
       <ul>
         <li><strong>User Need 2:</strong> An assistive technology user needs to be informed in real time of changes to the content being made by collaborators.</li>
         <li><strong>REQ 2:</strong> Provide a mode of operation in which status messages inform the assistive technology user of insertions, deletions or formatting-related changes made by collaborators as they occur.</li>
@@ -331,7 +336,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
         <li><strong>User Need 6:</strong> An assistive technology user needs to be informed of the presence of annotations along with the specific part of the content being annotated, such as words, sentences or paragraphs. This also applies to lines of code in a software development project.</li>
         <li><strong>REQ 6:</strong> Ensure that information about annotations is conveyed to assistive technologies, together with the boundaries of the text to which the annotation applies, along with any metadata associated with the annotation, and any comment text.</li>
       </ul>
-      <div class="note" role="note" id="issue-container-generatedID-2"><div role="heading" class="note-title marker" id="h-note-1" aria-level="3"><span>Note</span></div><p class="">See <cite>Web Content Accessibility Guidelines (WCAG) 2.1</cite> [<cite><a class="bibref" data-link-type="biblio" href="#bib-wcag21" title="Web Content Accessibility Guidelines (WCAG) 2.1">wcag21</a></cite>], success criterion 1.3.1.</p></div>
+      <div class="note" role="note" id="issue-container-generatedID-1"><div role="heading" class="note-title marker" id="h-note-0" aria-level="3"><span>Note</span></div><p class="">See <cite>Web Content Accessibility Guidelines (WCAG) 2.1</cite> [<cite><a class="bibref" data-link-type="biblio" href="#bib-wcag21" title="Web Content Accessibility Guidelines (WCAG) 2.1">wcag21</a></cite>], success criterion 1.3.1.</p></div>
       <ul>
         <li><strong>User Need 7:</strong> Assistive technology users need to be able to read text without being distracted by information about annotations.</li>
         <li><strong>REQ 7:</strong> Provide a mode of operation in which information about annotations is suppressed. This mode might be activated by an application setting, such as a toggle switch controlling the presence or absence of annotations.</li>
@@ -340,7 +345,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
         <li><strong>User Need 9:</strong> Assistive technology users need to be able to control the amount of information presented about annotations to prevent becoming overwhelmed while they are reading, navigating and editing content.</li>
         <li><strong>REQ 9:</strong> Provide options for the user to limit the amount of detail presented as each annotation is encountered. For example, it should be possible to suppress presentation of metadata, or replies to comments, or to alert the user only to the presence of the annotation without presenting the metadata or comment text.</li>
       </ul>
-      <div class="note" role="note" id="issue-container-generatedID-3"><div role="heading" class="note-title marker" id="h-note-2" aria-level="3"><span>Note</span></div><p class="">REQ 8 may be valuable to users in general, and it should be considered for inclusion as a feature of collaboration tools themselves.</p></div>
+      <div class="note" role="note" id="issue-container-generatedID-2"><div role="heading" class="note-title marker" id="h-note-1" aria-level="3"><span>Note</span></div><p class="">REQ 8 may be valuable to users in general, and it should be considered for inclusion as a feature of collaboration tools themselves.</p></div>
     </section>
     <section id="version-control-features"><div class="header-wrapper"><h2 id="x5-version-control-features"><bdi class="secno">5. </bdi>Version control features</h2><a class="self-link" href="#version-control-features" aria-label="Permalink for Section 5."></a></div>
       
@@ -354,7 +359,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
           <li><strong>User Need 11:</strong> Users with color blindness need to be able to distinguish insertions, deletions, and unaltered text effectively.</li>
           <li><strong>REQ 11:</strong> Use distinctions other than color to identify inserted and deleted text in the visual interface.</li>
         </ul>
-      <div class="note" role="note" id="issue-container-generatedID-4"><div role="heading" class="note-title marker" id="h-note-3" aria-level="4"><span>Note</span></div><p class="">See <cite>Web Content Accessibility Guidelines (WCAG) 2.1</cite> [<cite><a class="bibref" data-link-type="biblio" href="#bib-wcag21" title="Web Content Accessibility Guidelines (WCAG) 2.1">wcag21</a></cite>], success criterion 1.4.1.</p></div>
+      <div class="note" role="note" id="issue-container-generatedID-3"><div role="heading" class="note-title marker" id="h-note-2" aria-level="4"><span>Note</span></div><p class="">See <cite>Web Content Accessibility Guidelines (WCAG) 2.1</cite> [<cite><a class="bibref" data-link-type="biblio" href="#bib-wcag21" title="Web Content Accessibility Guidelines (WCAG) 2.1">wcag21</a></cite>], success criterion 1.4.1.</p></div>
       </section>
       <section id="presenting-differences-between-revisions"><div class="header-wrapper"><h3 id="x5-2-presenting-differences-between-revisions"><bdi class="secno">5.2 </bdi>Presenting Differences Between Revisions</h3><a class="self-link" href="#presenting-differences-between-revisions" aria-label="Permalink for Section 5.2"></a></div>
         
@@ -383,7 +388,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
     <dl class="bibliography"><dt id="bib-concurrency-control">[concurrency-control]</dt><dd>
       <cite>Concurrency control in groupware systems</cite>. Clarence A. Ellis; Simon J. Gibbs.  Proceedings of the 1989 ACM SIGMOD international conference on Management of data. 1989. 
     </dd><dt id="bib-wcag21">[wcag21]</dt><dd>
-      <a href="https://www.w3.org/TR/WCAG21/"><cite>Web Content Accessibility Guidelines (WCAG) 2.1</cite></a>. Andrew Kirkpatrick; Joshue O'Connor; Alastair Campbell; Michael Cooper.  W3C. 5 June 2018. W3C Recommendation. URL: <a href="https://www.w3.org/TR/WCAG21/">https://www.w3.org/TR/WCAG21/</a>
+      <a href="https://www.w3.org/TR/WCAG21/"><cite>Web Content Accessibility Guidelines (WCAG) 2.1</cite></a>. Michael Cooper; Andrew Kirkpatrick; Joshue O'Connor; Alastair Campbell.  W3C. 21 September 2023. W3C Recommendation. URL: <a href="https://www.w3.org/TR/WCAG21/">https://www.w3.org/TR/WCAG21/</a>
     </dd></dl>
   </section></section><p role="navigation" id="back-to-top">
     <a href="#title"><abbr title="Back to Top">↑</abbr></a>
