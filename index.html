@@ -10,7 +10,7 @@
   <body>
     <section id="abstract">
       <p>This document outlines various accessibility-related user needs, requirements and scenarios for web-based collaboration tools. These typically include one or more specific collaborative features such as real-time content editing by multiple authors, support for comments annotations, and revision control. The Cloud-based office application suites from Google and Microsoft are well-known examples of such collaboration tools.</p>
-      <p>The accessibility user needs and requirements described in this document may be implemented in the collaboration tool itself, or in an assistive technology application such as a screen reader or screen magnifier. We take a holistic approach to give foremost priority to the user^apos;s perspective, leading to the identification of solutions that may be implemented by different components of the software involved in performing a collaborative task.</p>
+      <p>The accessibility user needs and requirements described in this document may be implemented in the collaboration tool itself, or in an assistive technology application such as a screen reader or screen magnifier. We take a holistic approach to give foremost priority to the user&apos;s perspective, leading to the identification of solutions that may be implemented by different components of the software involved in performing a collaborative task.</p>
       <p>Although the user needs and requirements identified in this document <em>are non-normative</em>, they may influence the development of future accessibility guidelines, normative technical specifications, or features of collaboration tools and assistive technologies. They are relevant to software developers who contribute to the collaborative experience.</p>
     </section>
     <section id="sotd">
@@ -26,7 +26,8 @@
       <h2>Introduction</h2>
       <section id="collaboration-tools">
         <h3>What are collaboration tools?</h3>
-        <p>For the purposes of this document, a <dfn>collaboration tool</dfn> is any software that supports features designed to facilitate the interactive creation, editing or annotation of content by multiple contributors, whether working in simultaneous collaboration or asynchronously. Examples of collaboration tools include</p>
+/standard cont
+<p>For the purposes of this document, a <dfn>collaboration tool</dfn> is any software that supports features designed to facilitate the interactive creation, editing or annotation of content by multiple contributors, whether working in simultaneous collaboration or asynchronously. Examples of collaboration tools include</p>
         <ul>
           <li>A Web-based text editor or word processor that enables multiple authors to edit content simultaneously, with each contributor's changes being integrated into the resulting text and propagated in real time to the collaborators.</li>
           <li>A tool that enables Web pages to be annotated with comments that are automatically made available to other users of the annotation service who access the same pages with suitable software. The software may be included in a user agent, or it may be supplied as an extension.</li>
@@ -47,9 +48,11 @@
           <dd>Some systems can display the differences between revisions of a text for purposes of comparison.</dd>
           <dt>Suggested changes</dt>
           <dd>Some word processors can show changes (insertions, deletions and formatting-related modifications) made by collaborators, which an author can choose to accept or reject. These revisions are sometimes referred to as <dfn>suggested changes</dfn> or as <dfn>tracked changes</dfn>. Each change may be accompanied by metadata, for example the identity of the author who made the change, and a time stamp.</dd>
-        </dl>
+/wysiwyg
+	</dl>
 
           <p>Collaboration tools differ widely in the nature of content that may be edited. They also differ widely in the user interfaces presented to users. For example, word processors typically provide a <q>what you see is what you get</q> (<abbr title="what you see is what you get">wysiwyg</abbr>) interface based on a rendered view of the content, whereas editors designed for use with source code or markup language text do not. In the latter case, indentation and syntax highlighting may be the only visual cues to the structure of the code or markup available in the editing environment.</p>
+	  <p>We prefer collaboration tools that utilize standard menu organization and typical keyboard commands nowwell know to users from the stand-alone desktop environment. Standard controls require far less learning from the user, whereas specific accessibility modes with custom keyboard commands, and with menus that shift their location on screen pose significantly steep learning challenges to most users with disabilities, not just users with cognitive and learning disabilities.</p>
           <p>Collaboration tools that support editing of graphics, mathematical notation, or other content types are also within the scope of this document. However, only the collaboration-related aspects of such systems are addressed here. The accessibility issues arising from creating and editing these types of content are not considered, as they are separate problems from the user needs associated with the collaborative features of the tools.</p>
       </section>
       <section>
