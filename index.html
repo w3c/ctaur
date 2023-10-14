@@ -62,7 +62,7 @@
         <p>The collaboration features of these tools are necessarily complex. This can impose significant cognitive demands on many users, not only users with specialized accessibility requirements. This is especially true  for screen reader users, screen magnification and color contrast assistive technologies, as well as for persons living with various cognitive and learning disabilities. Many users cannot track updates on multiple locations simultaneously, Rather, they necessarily must view and comprehend the interactive elements of the application&apos;s features  sequentially, for example in speech or braille for screen reader users. A screen reader or magnifier used in a collaborative application may well present suggested changes and comments in one section of the screen while the user is reading a document in a word processor. The user may also be expected to be communicating verbally with fellow collaborators (e.g., in a meeting) while undertaking editing tasks. Moreover, at any time, incoming changes made by collaborators may alter the text that the user is reading or editing in real time.</p>
         <p>Due to the cognitive demands created by collaboration tools in the practical and social contexts in which they are used, strategies for improving accessibility are desirable that extend beyond current W3C guidance.</p>
 	<p>Thus when we talk about collaborative tools we necessarily must consider accessibility burdens imposed by their
-	concomitant complexity. In truth collaborative tools are necessarily complex interfaces for all users, and not only persons with various disabilities. A fairly common example is the use of arbitrary color to flag edits put forth by different collaborators. However, identifying collaborators only by colorization  violates WCAG 2.2 Success Criterion 1.4.1 on appropriate accessible <a href="https://www.w3.org/WAI/WCAG22/Understanding/use-of-color">Use of Color</a>.</p>
+	concomitant complexity. In truth collaborative tools are necessarily complex interfaces for all users, and not only persons with various disabilities. A fairly common example is the use of arbitrary color to flag edits put forth by different collaborators. However, identifying collaborators only by colorization  violates WCAG 2.2 Success Criterion 1.4.1 as described below in <a href="#version-control-changes">User Need 11</a>.</p>
       </section>
     </section>
     <section>
@@ -111,7 +111,7 @@
     </section>
     <section>
       <h2>Version control features</h2>
-      <section>
+      <section id="version-control-changes">
         <h3>Suggested changes</h3>
         <ul>
           <li><strong>User Need 10:</strong> Assistive technology users need to be able to read the text with information included about <em>suggested changes</em> (i.e., insertions, deletions or formatting modifications proposed by collaborators).</li>
@@ -121,7 +121,6 @@
           <li><strong>User Need 11:</strong> Users with color blindness need to be able to distinguish insertions, deletions, and unaltered text effectively.</li>
           <li><strong>REQ 11:</strong> Use distinctions other than color to identify inserted and deleted text in the visual interface.</li>
         </ul>
-      <p class="note">See <cite>Web Content Accessibility Guidelines (WCAG) 2.2</cite> [[wcag22]], success criterion 1.4.1.</p>
       </section>
       <section>
         <h3>Presenting Differences Between Revisions</h3>
