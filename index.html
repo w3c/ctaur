@@ -1,6 +1,6 @@
 <!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 <meta charset="utf-8">
-<meta name="generator" content="ReSpec 34.2.0">
+<meta name="generator" content="ReSpec 34.2.2">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <style>
 .issue-label{text-transform:initial}
@@ -149,15 +149,15 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
   "group": "apa",
   "github": "w3c/ctaur",
   "maxTocLevel": 4,
-  "publishISODate": "2023-10-17T00:00:00.000Z",
-  "generatedSubtitle": "W3C Editor's Draft 17 October 2023"
+  "publishISODate": "2023-12-06T00:00:00.000Z",
+  "generatedSubtitle": "W3C Editor's Draft 06 December 2023"
 }</script>
 <link rel="stylesheet" href="https://www.w3.org/StyleSheets/TR/2021/W3C-ED"></head>
   <body class="h-entry informative"><div class="head">
     <p class="logos"><a class="logo" href="https://www.w3.org/"><img crossorigin="" alt="W3C" height="48" src="https://www.w3.org/StyleSheets/TR/2021/logos/W3C" width="72">
   </a></p>
     <h1 id="title" class="title">Collaboration Tools Accessibility User Requirements</h1> 
-    <p id="w3c-state"><a href="https://www.w3.org/standards/types#ED">W3C Editor's Draft</a> <time class="dt-published" datetime="2023-10-17">17 October 2023</time></p>
+    <p id="w3c-state"><a href="https://www.w3.org/standards/types#ED">W3C Editor's Draft</a> <time class="dt-published" datetime="2023-12-06">06 December 2023</time></p>
     <details open="">
       <summary>More details about this document</summary>
       <dl>
@@ -200,15 +200,15 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
     
     
     <p class="copyright">
-    <a href="https://www.w3.org/Consortium/Legal/ipr-notice#Copyright">Copyright</a>
+    <a href="https://www.w3.org/policies/#copyright">Copyright</a>
     ©
     2022-2023
     
     <a href="https://www.w3.org/">World Wide Web Consortium</a>.
     <abbr title="World Wide Web Consortium">W3C</abbr><sup>®</sup>
-    <a href="https://www.w3.org/Consortium/Legal/ipr-notice#Legal_Disclaimer">liability</a>,
-    <a href="https://www.w3.org/Consortium/Legal/ipr-notice#W3C_Trademarks">trademark</a> and
-    <a rel="license" href="https://www.w3.org/Consortium/Legal/2023/software-license" title="W3C Software and Document Notice and License">permissive document license</a> rules apply.
+    <a href="https://www.w3.org/policies/#Legal_Disclaimer">liability</a>,
+    <a href="https://www.w3.org/policies/#W3C_Trademarks">trademark</a> and
+    <a rel="license" href="https://www.w3.org/copyright/software-license-2023/" title="W3C Software and Document Notice and License">permissive document license</a> rules apply.
   </p>
     <hr title="Separator for header">
   </div>
@@ -250,9 +250,9 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
           <a href="https://www.w3.org/Consortium/Patent-Policy/#sec-Disclosure">section 6 of the <abbr title="World Wide Web Consortium">W3C</abbr> Patent Policy</a>.
         
   </p><p>
-                  This document is governed by the
-                  <a id="w3c_process_revision" href="https://www.w3.org/2023/Process-20230612/">12 June 2023 <abbr title="World Wide Web Consortium">W3C</abbr> Process Document</a>.
-                </p><div class="note" id="issue-container-generatedID"><div role="heading" class="ednote-title marker" id="h-ednote" aria-level="3"><span>Editor's note</span></div><section class="">
+                      This document is governed by the
+                      <a id="w3c_process_revision" href="https://www.w3.org/2023/Process-20231103/">03 November 2023 <abbr title="World Wide Web Consortium">W3C</abbr> Process Document</a>.
+                    </p><div class="note" id="issue-container-generatedID"><div role="heading" class="ednote-title marker" id="h-ednote" aria-level="3"><span>Editor's note</span></div><section class="">
       <div class="header-wrapper"><h3 id="editor-s-note-contributing-to-this-document">Editor's Note: Contributing to this Document</h3><a class="self-link" href="#editor-s-note-contributing-to-this-document" aria-label="Permalink for this Section"></a></div>
       <p>This updated working draft publication is a document intended to become an <a href="https://www.w3.org/2021/Process-20211102/#note-track">Accessible Platform Architectures (APA) Note.</a> The intent of this (and all) APA working draft publications is to gain a wider review of its content and solicit feedback on user needs that may have been missed, underrepresented, or sub-optimally described.</p>
 
@@ -264,7 +264,6 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
       
       <section id="collaboration-tools"><div class="header-wrapper"><h3 id="x1-1-what-are-collaboration-tools"><bdi class="secno">1.1 </bdi>What are collaboration tools?</h3><a class="self-link" href="#collaboration-tools" aria-label="Permalink for Section 1.1"></a></div>
         
-/standard cont
 <p>For the purposes of this document, a <dfn id="dfn-collaboration-tool" tabindex="0" aria-haspopup="dialog" data-dfn-type="dfn">collaboration tool</dfn> is any software that supports features designed to facilitate the interactive creation, editing or annotation of content by multiple contributors, whether working in simultaneous collaboration or asynchronously. Examples of collaboration tools include</p>
         <ul>
           <li>A Web-based text editor or word processor that enables multiple authors to edit content simultaneously, with each contributor's changes being integrated into the resulting text and propagated in real time to the collaborators.</li>
@@ -275,7 +274,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
       </section>
       <section id="distinctive-features-of-collaboration-tools"><div class="header-wrapper"><h3 id="x1-2-distinctive-features-of-collaboration-tools"><bdi class="secno">1.2 </bdi>Distinctive features of collaboration tools</h3><a class="self-link" href="#distinctive-features-of-collaboration-tools" aria-label="Permalink for Section 1.2"></a></div>
         
-        <p>This document focuses primarily on features unique to collaboration tools, rather than features which they share with other Web application or with application software in general. Indeed, any tool that provides one or more of the features enumerated here may benefit from the user needs and corresponding requirements elaborated in the sections that follow.</p>
+        <p>This document focuses primarily on features unique to collaboration tools, rather than features which they share with other Web applications or with application software in general. Indeed, any tool that provides one or more of the features enumerated here may benefit from the user needs and corresponding requirements elaborated in the sections that follow.</p>
         <p>The distinctive capabilities of collaboration tools are illustrated by the examples in section<a href="#collaboration-tools" class="sec-ref"><bdi class="secno">1.1 </bdi>What are collaboration tools?</a>. It is important to consider how these features are manifested in the tool's user interface. From this perspective, the distinguishing features may be described as follows.</p>
         <dl>
           <dt>Real-time co-editing</dt>
