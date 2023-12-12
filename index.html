@@ -47,6 +47,8 @@
           <dd>Some systems can display the differences between revisions of a text for purposes of comparison.</dd>
           <dt>Suggested changes</dt>
           <dd>Some word processors can show changes (insertions, deletions and formatting-related modifications) made by collaborators, which an author can choose to accept or reject. These revisions are sometimes referred to as <dfn>suggested changes</dfn> or as <dfn>tracked changes</dfn>. Each change may be accompanied by metadata, for example the identity of the author who made the change, and a time stamp.</dd>
+          <dt>Access controls</dt>
+          <dd>Some collaborative environments support <em>access controls</em>, allowing restrictions to be imposed on modification of part or all of the content. Permission to modify content may be granted on a granular basis to specific individuals or to groups of users. For example, in a collaborative tool for creating fillable forms, some users may only be allowed to change the values of input fields (i.e., to complete a form), whereas others may be free to edit any aspect of the document, including the addition, deletion and rearrangement of form fields.</dd>
 	</dl>
 
           <p>Collaboration tools differ widely in the nature of content that may be edited. They also differ widely in the user interfaces presented to users. For example, word processors typically provide a <q>what you see is what you get</q> (<abbr title="what you see is what you get">wysiwyg</abbr>) interface based on a rendered view of the content, whereas editors designed for use with source code or markup language text do not. In the latter case, indentation and syntax highlighting may be the only visual cues to the structure of the code or markup available in the editing environment.</p>
@@ -140,6 +142,19 @@
         <li><strong>REQ 14B:</strong> If e-mail or a similar medium is used to deliver notifications, ensure that the <em>subject</em> of the message clearly specifies the project, document or issue relevant to the notification.</li>
         <li><strong>REQ 14C:</strong> If multiple notifications are provided together (e.g., in a single message), ensure that the user can sort the notifications according to reasonable preferences, for example, most recent first, or oldest first. This is applicable, for example, to a series of comments organized as <q>threads</q> of discussion, all delivered in a single summary message to the user.</li>
       </ul>
+    </section>
+    <section>
+      <h2>Access Controls</h2>
+      <p>A collaborative environment may provide access controls to restrict the modification of content to specified individuals or groups of users. Moreover, access controls may be applied to the entire content, as in a document which is marked as <em>read-only</em> in a text editor or office application, or they may restrict editing to designated parts. Depending on the capabilities of the application, permissions may be changed by an authorized user during a collaborative editing session.</p>
+      <ul>
+        <li><em>User Need 15:</em> Users of assistive technologies and those with cognitive or learning disabilities need to be able to find out whether they have permission to edit content, in whole or in part.</li>
+        <li><em>REQ 15:</em> Ensure that the applicable permission (e.g., read-only state) affecting content currently in focus is prominently presented in the user interface, and that it is made available to assistive technologies.</li>
+      </ul>
+      <ul>
+        <li><em>User Need 16:</em> Users, including those with learning or cognitive disabilities and those with assistive technologies, need to be informed of changes made to access permissions that take effect during an editing session.</li>
+        <li><em>REQ 16:</em> If an access control affecting the content currently in focus is changed during an editing session, for example by a collaborator, a notification of the change is presented in the user interface, and made available to assistive technologies.</li>
+      </ul>
+      <p class="note"><cite>Web Content Accessibility Guidelines (WCAG) 2.2</cite> [[wcag22]] should be consulted for guidance on ensuring that the user interface for configuring access controls meets appropriate accessibility requirements.</p>
     </section>
   </body>
 </html>
