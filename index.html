@@ -114,6 +114,9 @@
         <li><strong>REQ 8:</strong> Provide navigation functions and a means of obtaining a list of all the annotations associated with the content.</li>
         <li><strong>User Need 9:</strong> Assistive technology users need to be able to control the amount of information presented about annotations to prevent becoming overwhelmed while they are reading, navigating and editing content.</li>
         <li><strong>REQ 9:</strong> Provide options for the user to limit the amount of detail presented as each annotation is encountered. For example, it should be possible to suppress presentation of metadata, or replies to comments, or to alert the user only to the presence of the annotation without presenting the metadata or comment text.</li>
+        <li><strong>User Need 10:</strong> Assistive technology users and users with learning or cognitive disabilities sometimes need support in understanding and navigating annotations that represent comments organized as <em>threads</em> of conversation.</li>
+        <li><strong>REQ 10A:</strong> Ensure that the structure of comment threads is unambiguously presented in the user interface, both via visual cues such as icons and color changes, and to assistive technologies.</li>
+        <li><strong>REQ 10B:</strong> Enable threads to be expanded or collapsed by the user, and ensure the expanded or collapsed state is disclosed to assistive technologies.</li>
       </ul>
       <p class="note">REQ 8 may be valuable to users in general, and it should be considered for inclusion as a feature of collaboration tools themselves.</p>
     </section>
@@ -122,26 +125,26 @@
       <section id="version-control-changes">
         <h3>Suggested changes</h3>
         <ul>
-          <li><strong>User Need 10:</strong> Assistive technology users need to be able to read the text with information included about <em>suggested changes</em> (i.e., insertions, deletions or formatting modifications proposed by collaborators).</li>
-          <li><strong>REQ 10:</strong> Provide a mode of operation in which
+          <li><strong>User Need 11:</strong> Assistive technology users need to be able to read the text with information included about <em>suggested changes</em> (i.e., insertions, deletions or formatting modifications proposed by collaborators).</li>
+          <li><strong>REQ 11:</strong> Provide a mode of operation in which
           details of insertions, deletions and formatting changes are appropriately presented
           by the assistive technology as the user reads the content.</li>
-          <li><strong>User Need 11:</strong> Users with color blindness need to be able to distinguish insertions, deletions, and unaltered text effectively.</li>
-          <li><strong>REQ 11:</strong> Use distinctions other than color to identify inserted and deleted text in the visual interface as required by WCAG 2.2 <a href="https://www.w3.org/WAI/WCAG22/Understanding/use-of-color">Success Criterion 1.4.1: Use of Color</a>.</li>
+          <li><strong>User Need 12:</strong> Users with color blindness need to be able to distinguish insertions, deletions, and unaltered text effectively.</li>
+          <li><strong>REQ 12:</strong> Use distinctions other than color to identify inserted and deleted text in the visual interface as required by WCAG 2.2 <a href="https://www.w3.org/WAI/WCAG22/Understanding/use-of-color">Success Criterion 1.4.1: Use of Color</a>.</li>
         </ul>
       </section>
       <section>
         <h3>Presenting Differences Between Revisions</h3>
         <ul>
-          <li><strong>User Need 12:</strong> Users need to be able to compare revisions in meaningful units (words, sentences, lines, etc.), according to the nature of the content, to maximize comprehension.</li>
-          <li><strong>REQ 12:</strong> Present differences in a manner that is appropriate to the type of content. For example, software source code might be presented with line-by-line differences, whereas natural language documents might be presented with differences shown word-by-word or sentence-by-sentence.</li>
+          <li><strong>User Need 13:</strong> Users need to be able to compare revisions in meaningful units (words, sentences, lines, etc.), according to the nature of the content, to maximize comprehension.</li>
+          <li><strong>REQ 13:</strong> Present differences in a manner that is appropriate to the type of content. For example, software source code might be presented with line-by-line differences, whereas natural language documents might be presented with differences shown word-by-word or sentence-by-sentence.</li>
         </ul>
       </section>
       <section>
         <h3>Summarizing Effect of Revisions</h3>
         <ul>
-          <li><strong>User Need 13:</strong> Users with learning or cognitive disabilities, and users of assistive technologies sometimes need support in identifying revisions and understanding their effects.</li>
-          <li><strong>REQ 13:</strong> Provide a mechanism by which authors can identify a series of changes to the content, and associate this change set with an explanatory comment.</li>
+          <li><strong>User Need 14:</strong> Users with learning or cognitive disabilities, and users of assistive technologies sometimes need support in identifying revisions and understanding their effects.</li>
+          <li><strong>REQ 14:</strong> Provide a mechanism by which authors can identify a series of changes to the content, and associate this change set with an explanatory comment.</li>
         </ul>
         <p class="note">Although it may be useful to support automatic summary generation by technologies such as large language models, the state of the art as of the time of publication suggests implementors should exercise caution. Inaccurate summaries of changes may be worse for users than their absence. For this reason, summaries written by human authors are preferable.</p>
       </section>
@@ -150,24 +153,24 @@
       <h2>Notifications and Messages</h2>
       <p>Collaboration tools may send notifications to the user for a variety of reasons. For example, a user may be notified if a collaborator asynchronously submits changes to a document or project, or adds a comment. These notifications may be delivered via operating system facilities, or by a messaging service, such as e-mail or an instant message protocol. Moreover, the collaboration tool may support commenting, issue tracking, or other forms of interaction via external messaging. These optional capabilities are addressed in the following user needs and system requirements.</p>
       <ul>
-        <li><strong>User Need 14:</strong> Users who are easily distracted need to receive only notifications that are crucially important to their collaborative activity.</li>
-        <li><strong>REQ 14:</strong> Ensure that users can choose which types of notification are delivered, and which are suppressed, according to the nature of the information conveyed.</li>
-        <li><strong>User Need 15:</strong> Users for whom reading text is slow or difficult need information that is important to the task at hand to be clearly distinguished and prioritized.</li>
-        <li><strong>REQ 15A:</strong> Provide a mode of operation in which notifications are short, and links to more detailed information are included. In this mode, full details are not provided in the notification. For example, a user could be notified that a comment or issue has been created,  with the full text being available only via a link rather than as part of the notificational message itself.</li>
-        <li><strong>REQ 15B:</strong> If e-mail or a similar medium is used to deliver notifications, ensure that the <em>subject</em> of the message clearly specifies the project, document or issue relevant to the notification.</li>
-        <li><strong>REQ 15C:</strong> If multiple notifications are provided together (e.g., in a single message), ensure that the user can sort the notifications according to reasonable preferences, for example, most recent first, or oldest first. This is applicable, for example, to a series of comments organized as <q>threads</q> of discussion, all delivered in a single summary message to the user.</li>
+        <li><strong>User Need 15:</strong> Users who are easily distracted need to receive only notifications that are crucially important to their collaborative activity.</li>
+        <li><strong>REQ 15:</strong> Ensure that users can choose which types of notification are delivered, and which are suppressed, according to the nature of the information conveyed.</li>
+        <li><strong>User Need 16:</strong> Users for whom reading text is slow or difficult need information that is important to the task at hand to be clearly distinguished and prioritized.</li>
+        <li><strong>REQ 16A:</strong> Provide a mode of operation in which notifications are short, and links to more detailed information are included. In this mode, full details are not provided in the notification. For example, a user could be notified that a comment or issue has been created,  with the full text being available only via a link rather than as part of the notificational message itself.</li>
+        <li><strong>REQ 16B:</strong> If e-mail or a similar medium is used to deliver notifications, ensure that the <em>subject</em> of the message clearly specifies the project, document or issue relevant to the notification.</li>
+        <li><strong>REQ 16C:</strong> If multiple notifications are provided together (e.g., in a single message), ensure that the user can sort the notifications according to reasonable preferences, for example, most recent first, or oldest first. This is applicable, for example, to a series of comments organized as <q>threads</q> of discussion, all delivered in a single summary message to the user.</li>
       </ul>
     </section>
     <section>
       <h2>Access Controls</h2>
       <p>A collaborative environment may provide access controls to restrict the modification of content to specified individuals or groups of users. Moreover, access controls may be applied to the entire content, as in a document which is marked as <em>read-only</em> in a text editor or office application, or they may restrict editing to designated parts. Depending on the capabilities of the application, permissions may be changed by an authorized user during a collaborative editing session.</p>
       <ul>
-        <li><em>User Need 16:</em> Users of assistive technologies and those with cognitive or learning disabilities need to be able to find out whether they have permission to edit content, in whole or in part.</li>
-        <li><em>REQ 16:</em> Ensure that the applicable permission (e.g., read-only state) affecting content currently in focus is prominently presented in the user interface, and that it is made available to assistive technologies.</li>
+        <li><em>User Need 17:</em> Users of assistive technologies and those with cognitive or learning disabilities need to be able to find out whether they have permission to edit content, in whole or in part.</li>
+        <li><em>REQ 17:</em> Ensure that the applicable permission (e.g., read-only state) affecting content currently in focus is prominently presented in the user interface, and that it is made available to assistive technologies.</li>
       </ul>
       <ul>
-        <li><em>User Need 17:</em> Users, including those with learning or cognitive disabilities and those with assistive technologies, need to be informed of changes made to access permissions that take effect during an editing session.</li>
-        <li><em>REQ 17:</em> If an access control affecting the content currently in focus is changed during an editing session, for example by a collaborator, a notification of the change is presented in the user interface, and made available to assistive technologies.</li>
+        <li><em>User Need 18:</em> Users, including those with learning or cognitive disabilities and those with assistive technologies, need to be informed of changes made to access permissions that take effect during an editing session.</li>
+        <li><em>REQ 18:</em> If an access control affecting the content currently in focus is changed during an editing session, for example by a collaborator, a notification of the change is presented in the user interface, and made available to assistive technologies.</li>
       </ul>
       <p class="note"><cite>Web Content Accessibility Guidelines (WCAG) 2.2</cite> [[wcag22]] should be consulted for guidance on ensuring that the user interface for configuring access controls meets appropriate accessibility requirements.</p>
     </section>
