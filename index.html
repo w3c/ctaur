@@ -29,10 +29,13 @@
         <h3>What are collaboration tools?</h3>
 <p>For the purposes of this document, a <dfn>collaboration tool</dfn> is any software that supports features designed to facilitate the interactive creation, editing or annotation of content by multiple contributors, whether working in simultaneous collaboration or asynchronously. Examples of collaboration tools include</p>
         <ul>
-          <li>A Web-based text editor or word processor that enables multiple authors to edit content simultaneously, with each contributor's changes being integrated into the resulting text and propagated in real time to the collaborators.</li>
-          <li>A tool that enables Web pages to be annotated with comments that are automatically made available to other users of the annotation service who access the same pages with suitable software. The software may be included in a user agent, or it may be supplied as an extension.</li>
-          <li>An Integrated Development Environment (<abbr title="Integrated development Environment">IDE</abbr>) that supports the collaborative editing of program source code in real time.</li>
+          <li>A Web-based text editor or word processor that enables multiple authors to edit content simultaneously while discussing their edits during a Real Time Communications teleconference, with each contributor's changes being integrated into the resulting text and propagated in real time to the collaborators.</li>
+
+	  >A Web-based text editor or word processor that enables multiple authors to edit content asynchronously over many days and week, with each contributor&apos;s
+	  changes being integrated into the resulting text and propagated on next load to the collaborators.</li><li>A tool that enables Web pages to be annotated with comments that are automatically made available to other users of the annotation service who access the same pages with suitable software. The software may be included in a user agent, or it may be supplied as an extension.</li>
+          <li>An Integrated Development Environment (<abbr title="Integrated development Environment">IDE</abbr>) that supports the collaborative editing of program source code in real time (or asynchronously).</li>
           <li>A wiki that supports version control, for example by enabling authors to revert to prior versions of a page or to view the differences between two versions.</li>
+	  <li>A midi or audio editing application that allows real-time synchronous content editing, or asynchronous content editing. Collaborators hear edited content on demand during a teleconference editing conversation or on content refresh when editing asynchronously.</li>
         </ul>
       </section>
       <section id="distinctive-features">
@@ -40,8 +43,8 @@
         <p>This document focuses primarily on features unique to collaboration tools, rather than features which they share with other Web applications or with application software in general. Indeed, any tool that provides one or more of the features enumerated here may benefit from the user needs and corresponding requirements elaborated in the sections that follow.</p>
         <p>The distinctive capabilities of collaboration tools are illustrated by the examples in section<a href="#collaboration-tools"></a>. It is important to consider how these features are manifested in the tool&apos;s user interface. From this perspective, the distinguishing features may be described as follows.</p>
         <dl>
-          <dt>Real-time co-editing</dt>
-          <dd>A feature enabling multiple authors to edit the same content simultaneously. The changes introduced by different authors are combined in real time, using algorithms such as operational transformation [[concurrency-control]]. The combined changes are then made immediately visible in all of the participating authors' editing sessions. The effect is that each author can perceive, in real time, the changes made by collaborators, including the location of another author's focus within the content.</dd>
+          <dt>Real-time and asynchronous co-editing</dt>
+          <dd>A feature enabling multiple authors to edit the same content simultaneously or over days, weeks months, and years. The changes introduced by different authors in real-time are combined in real time, using algorithms such as operational transformation [[concurrency-control]]. The combined changes are then made immediately visible in all of the participating authors' editing sessions. The effect is that each author can perceive, in real time, the changes made by collaborators, including the location of another author's focus within the content. Asynchronous edits are are made visible on document reload.</dd>
           <dt>Annotation of content with comments</dt>
           <dd>Some tools enable users to associate comments with parts of the content that is being read or edited. In systems such as word processors, replying to comments is supported, allowing threads of discussion to be associated with parts of a document.</dd>
           <dt>Comparing revisions</dt>
