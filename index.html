@@ -9,14 +9,14 @@
   </head>
   <body>
     <section id="abstract">
-      <p>This document outlines various accessibility-related user needs, requirements and scenarios for synchronous or asyncrhonous web-based collaboration tools. These typically include one or more specific collaborative features such as 
+      <p>This document outlines various accessibility-related user needs, requirements and scenarios for synchronous or asynchronous web-based collaboration tools. These typically include one or more specific collaborative features such as 
       content editing by multiple authors, support for comments annotations, and revision control in real-time synchronous sessions, or asynchronously. Asynchronous tools are more commonly known as revision control systems rather than collaboration tools though their functionality is otherwise very similar. The Cloud-based office application suites from Google and Microsoft are well-known examples of the former. Web tools built on git are well-known example of the latter.</p>
       <p>The accessibility user needs and requirements described in this document may be implemented in the collaboration tool itself, or in an assistive technology application such as a screen reader or screen magnifier. Widely used desktop applications such as word processors and spread sheets also commonly support collaboration features. We take a holistic approach to give foremost priority to the user&apos;s perspective, leading to the identification of features and solutions that may be implemented by different components of the software stack involved in performing a collaborative task.</p>
       <p>Although the user needs and requirements identified in this document <em>are non-normative</em>, they may influence the development of future accessibility guidelines, normative technical specifications, or features of collaboration tools and assistive technologies. They are relevant to software developers who contribute to the collaborative experience.</p>
     </section>
     <section id="sotd">
     <section class="ednote">
-      <h2>Editor's Note: Contributing to this Document</h2>
+      <h2>Editor&apos;s Note: Contributing to this Document</h2>
       <p>This updated working draft publication is a document intended to become an <a href="https://www.w3.org/2021/Process-20211102/#note-track">Accessible Platform Architectures (APA) Note.</a> The intent of this (and all) APA working draft publications is to gain a wider review of its content and solicit feedback on user needs that may have been missed, underrepresented, or sub-optimally described.</p>
 
 <p>APA encourages review and feedback from all accessibility perspectives to ensure future drafts are as comprehensive as possible.</p>
@@ -29,7 +29,7 @@
         <h3>What are collaboration tools?</h3>
 <p>For the purposes of this document, a <dfn>collaboration tool</dfn> is any software that supports features designed to facilitate the interactive creation, editing or annotation of content by multiple contributors, whether working in simultaneous collaboration or asynchronously. Examples of collaboration tools include</p>
         <ul>
-          <li>A Web-based text editor or word processor that enables multiple authors to edit content simultaneously while discussing their edits during a Real Time Communications teleconference, with each contributor's changes being integrated into the resulting text and propagated in real time to the collaborators.</li>
+          <li>A Web-based text editor or word processor that enables multiple authors to edit content simultaneously while discussing their edits during a Real Time Communications teleconference, with each contributor&apos;s changes being integrated into the resulting text and propagated in real time to the collaborators.</li>
 
 	  <li>A Web-based text editor or word processor that enables multiple authors to edit content asynchronously over many days and week, with each contributor&apos;s
 	  changes being integrated into the resulting text and propagated on next load to the collaborators.</li><li>A tool that enables Web pages to be annotated with comments that are automatically made available to other users of the annotation service who access the same pages with suitable software. The software may be included in a user agent, or it may be supplied as an extension.</li>
@@ -44,7 +44,7 @@
         <p>The distinctive capabilities of collaboration tools are illustrated by the examples in section<a href="#collaboration-tools"></a>. It is important to consider how these features are manifested in the tool&apos;s user interface. From this perspective, the distinguishing features may be described as follows.</p>
         <dl>
           <dt>Real-time and asynchronous co-editing</dt>
-          <dd>A feature enabling multiple authors to edit the same content simultaneously or over days, weeks months, and years. The changes introduced by different authors in real-time are combined in real time, using algorithms such as operational transformation [[concurrency-control]]. The combined changes are then made immediately visible in all of the participating authors' editing sessions. The effect is that each author can perceive, in real time, the changes made by collaborators, including the location of another author's focus within the content. Asynchronous edits, on the other hand,  are made visible on document reload.</dd>
+          <dd>A feature enabling multiple authors to edit the same content simultaneously or over days, weeks months, and years. The changes introduced by different authors in real-time are combined in real time, using algorithms such as operational transformation [[concurrency-control]]. The combined changes are then made immediately visible in all of the participating authors' editing sessions. The effect is that each author can perceive, in real time, the changes made by collaborators, including the location of another author&apos;s focus within the content. Asynchronous edits, on the other hand,  are made visible on document reload.</dd>
           <dt>Annotation of content with comments</dt>
           <dd>Some tools enable users to associate comments with parts of the content that is being read or edited. In systems such as word processors, replying to comments is supported, allowing threads of discussion to be associated with parts of a document.</dd>
           <dt>Comparing revisions</dt>
@@ -55,7 +55,7 @@
           <dd>Some collaborative environments support <em>access controls</em>, allowing restrictions to be imposed on modification of part or all of the content. Permission to modify content may be granted on a granular basis to specific individuals or to groups of users. For example, in a collaborative tool for creating fillable forms, some users may only be allowed to change the values of input fields (i.e., to complete a form), whereas others may be free to edit any aspect of the document, including the addition, deletion and rearrangement of form fields.</dd>
 	</dl>
 
-          <p>Collaboration tools differ widely in the nature of content that may be edited. They also differ widely in the user interfaces presented to users. For example, word processors typically provide a <q>what you see is what you get</q> (<abbr title="what you see is what you get">wysiwyg</abbr>) interface based on a rendered view of the content, whereas editors designed for use with source code or markup language text do not. In the latter case, indentation and syntax highlighting may be the only visual cues to the structure of the code or markup available in the editing environment. The audio and video collaborative editing environmentwill require the editor to remember one version while the candidate replacement version is played&mdash;precisely as is required in stand-alone audio and video editing.  In audio and video identifying the region to be played for participating collaborators, together with region and user access control, and comment annotation are arguably the only collaborative features inscope of this document.</p>
+          <p>Collaboration tools differ widely in the nature of content that may be edited. They also differ widely in the user interfaces presented to users. For example, word processors typically provide a <q>what you see is what you get</q> (<abbr title="what you see is what you get">wysiwyg</abbr>) interface based on a rendered view of the content, whereas editors designed for use with source code or markup language text do not. In the latter case, indentation and syntax highlighting may be the only visual cues to the structure of the code or markup available in the editing environment. The audio and video collaborative editing environment will require the editor to remember one version while the candidate replacement version is played&mdash;precisely as is required in stand-alone audio and video editing.  In audio and video identifying the region to be played for participating collaborators, together with region and user access control, and comment annotation are arguably the only collaborative features in scope of this document.</p>
 	  <p>We prefer collaboration tools that utilize standard menu organization and typical keyboard commands now well known to users from the stand-alone desktop environment. Standard controls require far less learning from the user, whereas specific accessibility modes with custom keyboard commands, and with menus that shift their location on screen pose significantly steep learning challenges to most users with disabilities, not just users with cognitive and learning disabilities.</p>
           <p>Collaboration tools that support editing of graphics, mathematical notation, or other content types are also within the scope of this document. However, only the collaboration-related aspects of such systems are addressed here. The accessibility issues arising from creating and editing these types of content are not considered, as they are separate problems from the user needs associated with the collaborative features of the tools.</p>
 	  <p>Nevertheless it is important that collaborative tools support the full range of editing functions associated with making web content accessible. Among others this would include the ability to add
@@ -77,7 +77,7 @@
       </section>
       <section id="social">
 	      <h2>Social Considerations</h2>
-	      <p>Collaborative tools should support all identified accessibility features in order to provide comprehensive accessibility. However, it is unlikely all features will be needed by any individual collaborative team effort. We assume persons with disabilities are brought into collaborative teams because of the contributions they are expected to make in the project. Teams are encouraged to focus on accomodating the specific accessibility needs of participating team members in order to operate most efficiently and productively.</p>
+	      <p>Collaborative tools should support all identified accessibility features in order to provide comprehensive accessibility. However, it is unlikely all features will be needed by any individual collaborative team effort. We assume persons with disabilities are brought into collaborative teams because of the contributions they are expected to make in the project. Teams are encouraged to focus on accommodating the specific accessibility needs of participating team members in order to operate most efficiently and productively.</p>
       </section>
     </section>
 
@@ -86,12 +86,12 @@
 		    Glossary
 	    </h2>
 
-	    <p><strong>EDITOR'S NOTE</strong><br> Section content yet to be written.</p>
+	    <p><strong>EDITOR&apos;S NOTE</strong><br> Section content yet to be written.</p>
     </section>
      
     <section>
       <h2>User need definition</h2>
-      <p>Specific user needs are frequently defined both by   task required to achieve a particular goal and also by environmental conditions. Context matters. For example, the cognitive demands imposed by interacting with the collaboration-related features of an application depend not only on the needs and capabilities of the user, including the possible presence of assistive technology, but also on the context. A collaborative task that the user can perform independently while working alone in a distraction-free environment may become cognitively burdensome if performed in a situation such as a meeting. Working with comments and suggested changes in a document may become more cognitively demanding if other authors are simultaneously editing the same content, and the user needs to be aware of their activities (e.g., to avoid introducing conflicting changes) while still performing the editing task. The use of different input types and methods, such as speech input or switch-based input, can affect the amount of time required to enter and edit text, as well as the user's ability to respond to potentially disruptive changes introduced by collaborators.'</p>
+      <p>Specific user needs are frequently defined both by   task required to achieve a particular goal and also by environmental conditions. Context matters. For example, the cognitive demands imposed by interacting with the collaboration-related features of an application depend not only on the needs and capabilities of the user, including the possible presence of assistive technology, but also on the context. A collaborative task that the user can perform independently while working alone in a distraction-free environment may become cognitively burdensome if performed in a situation such as a meeting. Working with comments and suggested changes in a document may become more cognitively demanding if other authors are simultaneously editing the same content, and the user needs to be aware of their activities (e.g., to avoid introducing conflicting changes) while still performing the editing task. The use of different input types and methods, such as speech input or switch-based input, can affect the amount of time required to enter and edit text, as well as the user&apos;s ability to respond to potentially disruptive changes introduced by collaborators.'</p>
     </section>
     <section>
       <h2>Real-Time co-editing</h2>
@@ -102,11 +102,11 @@
       <p class="note">WCAG requires that status messages be made available to assistive technologies. See <cite>Web Content Accessibility Guidelines (WCAG) 2.2</cite> [[wcag22]], success criterion 4.1.3, and the associated definition of <em>status message</em>.</p>
       <ul>
         <li><strong>User Need 2:</strong> An assistive technology user needs to be informed in real time of changes to the content being made by collaborators.</li>
-        <li><strong>REQ 2:</strong> Provide a mode of operation in which status messages inform the assistive technology user of insertions, deletions or formatting-related changes made by collaborators as they occur. Limiting these notifications to a content span currently focussed by the user is also an advisable option.</li>
+        <li><strong>REQ 2:</strong> Provide a mode of operation in which status messages inform the assistive technology user of insertions, deletions or formatting-related changes made by collaborators as they occur. Limiting these notifications to a content span currently focused by the user is also an advisable option.</li>
         <li><strong>User Need 3:</strong> Assistive technology users need the ability to read or edit without being distracted by status messages.</li>
         <li><strong>REQ 3:</strong> Provide a mode of operation in which status messages informing the user of the presence or activities of collaborators are suppressed. This may be achieved by allowing the user selectively to enable and disable specific types of status message, to messages relating to a specific span of content, or all such messages.</li>
         <li><strong>User Need 4:</strong> An assistive technology user needs the ability to track changes introduced by a specific collaborator as they are made.</li>
-        <li><strong>REQ 4:</strong> Provide a function that moves and tracks user^apos;s
+        <li><strong>REQ 4:</strong> Provide a function that moves and tracks user&apos;s
         focus to the location where a specific collaborator
         is editing. If there are multiple active collaborators, then multiple
         such commands, or a menu of active content editors, should be available.</li>
@@ -163,7 +163,7 @@
           <li><strong>User Need 14:</strong> Users with learning or cognitive disabilities, and users of assistive technologies sometimes need support in identifying revisions and understanding their effects.</li>
           <li><strong>REQ 14:</strong> Provide a mechanism by which authors can identify a series of changes to the content, and associate this change set with an explanatory comment.</li>
         </ul>
-        <p class="note">Although it may be useful to support automatic summary generation by technologies such as large language models, the state of the art as of the time of publication suggests implementors should exercise caution. Inaccurate summaries of changes may be worse for users than their absence. For this reason, summaries written by human authors are generally preferable to those authored by automated large language models.</p>
+        <p class="note">Although it may be useful to support automatic summary generation by technologies such as large language models, the state of the art as of the time of publication suggests implementers should exercise caution. Inaccurate summaries of changes may be worse for users than their absence. For this reason, summaries written by human authors are generally preferable to those authored by automated large language models.</p>
       </section>
     </section>
     <section>
@@ -196,7 +196,7 @@
       <p>To facilitate effective collaboration, applications should be designed to respect conventions of user interface design that are likely to be expected by users, including those who have disabilities.</p>
       <ul>
         <li><em>User Need 19:</em> Users with learning or cognitive disabilities or who use assistive technologies need to be able to learn collaboration tools efficiently, including software with which they are unfamiliar and which is necessary to the task at hand.</li>
-        <li><em>REQ 19:</em> Support the user interface conventions and accessibility features of the user's operating system, desktop environment, user agent and assistive technology. For example, some assistive technologies, notably screen readers, provide commands and features for interacting with comments and revisions, which should be supported by collaboration tools to which these functions are applicable.</li>
+        <li><em>REQ 19:</em> Support the user interface conventions and accessibility features of the user&apos;s operating system, desktop environment, user agent and assistive technology. For example, some assistive technologies, notably screen readers, provide commands and features for interacting with comments and revisions, which should be supported by collaboration tools to which these functions are applicable.</li>
       </ul>
     </section>
   </body>
