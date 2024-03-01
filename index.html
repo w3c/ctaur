@@ -9,7 +9,7 @@
   </head>
   <body>
     <section id="abstract">
-      <p>This document outlines various accessibility-related user needs, requirements and scenarios for synchronous or asynchronous web-based collaboration tools. These typically include one or more specific collaborative features such as 
+      <p>This document outlines various accessibility-related user needs, requirements and scenarios for both synchronous and asynchronous web-based collaboration tools. These tools typically include one or more specific collaborative features such as 
       content editing by multiple authors, support for comments annotations, and revision control in real-time synchronous sessions, or asynchronously. Asynchronous tools are more commonly known as revision control systems rather than collaboration tools though their functionality is otherwise very similar. The Cloud-based office application suites from Google and Microsoft are well-known examples of synchronous, real-time collaboration tools, though they also support asynchronous collaboration. Web tools built on git are well-known example of asynchronous collaboration tools.</p>
       <p>The accessibility user needs and requirements described in this document may be implemented in the collaboration tool itself, or in an assistive technology application such as a screen reader or screen magnifier. Widely used desktop applications such as word processors and spread sheets also commonly support collaboration features. We take a holistic approach to give foremost priority to the user&apos;s perspective, leading to the identification of features and solutions that may be implemented by different components of the software stack involved in performing a collaborative task.</p>
       <p>Although the user needs and requirements identified in this document <em>are non-normative</em>, they may influence the development of future accessibility guidelines, normative technical specifications, or features of collaboration tools and assistive technologies. They are relevant to software developers who contribute to the collaborative experience.</p>
@@ -35,16 +35,21 @@
 	  changes being integrated into the resulting text and propagated on next load to the collaborators.</li><li>A tool that enables Web pages to be annotated with comments that are automatically made available to other users of the annotation service who access the same pages with suitable software. The software may be included in a user agent, or it may be supplied as an extension.</li>
           <li>An Integrated Development Environment (<abbr title="Integrated development Environment">IDE</abbr>) that supports the collaborative editing of program source code in real time (or asynchronously).</li>
           <li>A wiki that supports version control, for example by enabling authors to revert to prior versions of a page or to view the differences between two versions.</li>
-	  <li>A midi or audio editing application that allows real-time synchronous content editing, or asynchronous content editing. Collaborators hear edited content on demand during a teleconference editing conversation or on content refresh when editing asynchronously.</li>
+	  <li>A midi or audio editing application that allows real-time synchronous audio content editing, or asynchronous content editing. Collaborators hear edited content on demand during a teleconference editing session or on content refresh when editing asynchronously.</li>
         </ul>
       </section>
       <section id="distinctive-features">
         <h3>Distinctive features of collaboration tools</h3>
         <p>This document focuses primarily on features unique to collaboration tools, rather than features which they share with other Web applications or with application software in general. Indeed, any tool that provides one or more of the features enumerated here may benefit from the user needs and corresponding requirements elaborated in the sections that follow.</p>
-        <p>The distinctive capabilities of collaboration tools are illustrated by the examples in section<a href="#collaboration-tools"></a>. It is important to consider how these features are manifested in the tool&apos;s user interface. From this perspective, the distinguishing features may be described as follows.</p>
+        <p>The distinctive capabilities of collaboration tools are illustrated by the examples described in the section: <a href="#collaboration-tools">What are collaboration tools?</a>. It is important to consider how these features are manifested in the tool&apos;s user interface. From this perspective, the distinguishing features may be described as follows.</p>
         <dl>
           <dt>Real-time and asynchronous co-editing</dt>
-          <dd>A feature enabling multiple authors to edit the same content simultaneously or over days, weeks months, and years. The changes introduced by different authors in real-time are combined in real time, using algorithms such as operational transformation [[concurrency-control]]. The combined changes are then made immediately visible in all of the participating authors' editing sessions. The effect is that each author can perceive, in real time, the changes made by collaborators, including the location of another author&apos;s focus within the content. Asynchronous edits, on the other hand,  are made visible on document reload.</dd>
+          <dd>A feature enabling multiple authors to edit the same content simultaneously or over days, weeks months, and years. The changes introduced by different authors in real-time are combined in real time, using algorithms such as operational transformation [[concurrency-control]]. The combined changes are then made immediately visible in all of the participating authors' editing sessions. The effect is that each author may perceive, in real time,
+		  <ul>
+			  <li>Edits proposed by collaborators,</li>
+			  <li>The location of other editors&apos; focus within content.</li>
+		  </ul>
+		  Asynchronous edits, on the other hand,  are made visible on document reload.</dd>
           <dt>Annotation of content with comments</dt>
           <dd>Some tools enable users to associate comments with parts of the content that is being read or edited. In systems such as word processors, replying to comments is supported, allowing threads of discussion to be associated with parts of a document.</dd>
           <dt>Comparing revisions</dt>
@@ -55,7 +60,14 @@
           <dd>Some collaborative environments support <em>access controls</em>, allowing restrictions to be imposed on modification of part or all of the content. Permission to modify content may be granted on a granular basis to specific individuals or to groups of users. For example, in a collaborative tool for creating fillable forms, some users may only be allowed to change the values of input fields (i.e., to complete a form), whereas others may be free to edit any aspect of the document, including the addition, deletion and rearrangement of form fields.</dd>
 	</dl>
 
-          <p>Collaboration tools differ widely in the nature of content that may be edited. They also differ widely in the user interfaces presented to users. For example, word processors typically provide a <q>what you see is what you get</q> (<abbr title="what you see is what you get">wysiwyg</abbr>) interface based on a rendered view of the content, whereas editors designed for use with source code or markup language text do not. In the latter case, indentation and syntax highlighting may be the only visual cues to the structure of the code or markup available in the editing environment. The audio and video collaborative editing environment will require the editor to remember one version while the candidate replacement version is played&mdash;precisely as is required in stand-alone audio and video editing.  In audio and video identifying the region to be played for participating collaborators, together with region and user access control, and comment annotation are arguably the only collaborative features in scope of this document.</p>
+          <p>Collaboration tools differ widely in the nature of content that may be edited. They also differ widely in the user interfaces presented to users. For example:cl
+	  <ul>
+		  <li>Word processors typically provide a <q>what you see is what you get</q> (<abbr title="what you see is what you get">wysiwyg</abbr>) interface based on a rendered view of the content.</li>
+		  <li>Editors designed for source code or markup language text development do not. In the latter case, indentation and syntax highlighting may be the only visual cues provided to the structure of the code or markup available in the editing environment.</li>
+		  <li>Candidate video renditions may be played in side by side windows for purposes of comparison and editing decisioning.</li>
+		  <li>By its very nature audio alternatives must be played serially, and their distinctions remembered in the comparison and decisioning process.</li>
+	  </ul></p>
+
 	  <p>We prefer collaboration tools that utilize standard menu organization and typical keyboard commands now well known to users from the stand-alone desktop environment. Standard controls require far less learning from the user, whereas specific accessibility modes with custom keyboard commands, and with menus that shift their location on screen pose significantly steep learning challenges to most users with disabilities, not just users with cognitive and learning disabilities.</p>
           <p>Collaboration tools that support editing of graphics, mathematical notation, or other content types are also within the scope of this document. However, only the collaboration-related aspects of such systems are addressed here. The accessibility issues arising from creating and editing these types of content are not considered, as they are separate problems from the user needs associated with the collaborative features of the tools.</p>
 	  <p>Nevertheless it is important that collaborative tools support the full range of editing functions associated with making web content accessible. Among others this would include the ability to add
@@ -65,7 +77,7 @@
         <h3>Scope and Applicability of this Document</h3>
         <p>Accessibility-related guidance provided in this document is applicable to a wide variety of tools. No unnecessary restriction is placed on the types of Web-based software to which it may reasonably be applied.</p>
         <p>If a tool implements one or more of the distinctive features described in section <a href="#distinctive-features"></a>, then the guidance in this document which addresses each such supported feature is relevant and applicable to the tool. Thus, the scope of the document includes any tool implemented using Web technologies that implements at least one of the distinctive features for which guidance is offered in the sections that follow.</p>
-        <p>For example, an annotation tool supporting the association of shared comments with selected text in Web pages would offer only a single feature described in this document. For this reason, only section <a href="annotations"></a> would be relevant to the tool.</p>
+        <p>For example, an annotation tool supporting the association of shared comments with selected text in Web pages would offer only a single feature described in this document. For this reason, only section <a href="#annotations">Annotations</a> would be relevant to the tool.</p>
       </section>
             <section>
 		            <h3>Collaboration tools and accessibility</h3>
@@ -112,7 +124,7 @@
         such commands, or a menu of active content editors, should be available.</li>
         <li><strong>User Need 5:</strong> Users with vision, cognitive or
         physical disabilities need to be able to edit content without
-        distraction from changes introduced by collaborators.</li>
+        the distraction of changes introduced by collaborators.</li>
         <li><strong>REQ 5A:</strong> Provide a mode of operation in which changes made by collaborators are not displayed while the user is editing, or</li>
         <li><strong>REQ 5B:</strong> Provide a mode of operation in which the component of the content that the user is editing (e.g., the paragraph, section, semantic unit of source code, or graphical object) can only be changed by one collaborator at a time, preventing others from making simultaneous modifications to the same component.</li>
       </ul>
