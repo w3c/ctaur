@@ -1,6 +1,6 @@
 <!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 <meta charset="utf-8">
-<meta name="generator" content="ReSpec 34.4.0">
+<meta name="generator" content="ReSpec 34.5.0">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <style>
 .issue-label{text-transform:initial}
@@ -9,7 +9,7 @@
 span.warning{padding:.1em .5em .15em}
 .issue.closed span.issue-number{text-decoration:line-through}
 .issue.closed span.issue-number::after{content:" (Closed)";font-size:smaller}
-.warning{border-color:#f11;border-width:.2em;border-style:solid;background:#fbe9e9}
+.warning{border-color:#f11;border-color:var(--warning-border,#f11);border-width:.2em;border-style:solid;background:#fbe9e9;background:var(--warning-bg,#fbe9e9);color:#000;color:var(--text,#000)}
 .warning-title:before{content:"⚠";font-size:1.3em;float:left;padding-right:.3em;margin-top:-.3em}
 li.task-list-item{list-style:none}
 input.task-list-item-checkbox{margin:0 .35em .25em -1.6em;vertical-align:middle}
@@ -17,13 +17,13 @@ input.task-list-item-checkbox{margin:0 .35em .25em -1.6em;vertical-align:middle}
 </style>
 <style>
 dfn{cursor:pointer}
-.dfn-panel{position:absolute;z-index:35;min-width:300px;max-width:500px;padding:.5em .75em;margin-top:.6em;font-family:"Helvetica Neue",sans-serif;font-size:small;background:#fff;color:#000;box-shadow:0 1em 3em -.4em rgba(0,0,0,.3),0 0 1px 1px rgba(0,0,0,.05);border-radius:2px}
+.dfn-panel{position:absolute;z-index:35;min-width:300px;max-width:500px;padding:.5em .75em;margin-top:.6em;font-family:"Helvetica Neue",sans-serif;font-size:small;background:#fff;background:var(--indextable-hover-bg,#fff);color:#000;color:var(--text,#000);box-shadow:0 1em 3em -.4em rgba(0,0,0,.3),0 0 1px 1px rgba(0,0,0,.05);box-shadow:0 1em 3em -.4em var(--tocsidebar-shadow,rgba(0,0,0,.3)),0 0 1px 1px var(--tocsidebar-shadow,rgba(0,0,0,.05));border-radius:2px}
 .dfn-panel:not(.docked)>.caret{position:absolute;top:-9px}
-.dfn-panel:not(.docked)>.caret::after,.dfn-panel:not(.docked)>.caret::before{content:"";position:absolute;border:10px solid transparent;border-top:0;border-bottom:10px solid #fff;top:0}
-.dfn-panel:not(.docked)>.caret::before{border-bottom:9px solid #a2a9b1}
+.dfn-panel:not(.docked)>.caret::after,.dfn-panel:not(.docked)>.caret::before{content:"";position:absolute;border:10px solid transparent;border-top:0;border-bottom:10px solid #fff;border-bottom-color:var(--indextable-hover-bg,#fff);top:0}
+.dfn-panel:not(.docked)>.caret::before{border-bottom:9px solid #a2a9b1;border-bottom-color:var(--indextable-hover-bg,#a2a9b1)}
 .dfn-panel *{margin:0}
-.dfn-panel b{display:block;color:#000;margin-top:.25em}
-.dfn-panel ul a[href]{color:#333}
+.dfn-panel b{display:block;color:#000;color:var(--text,#000);margin-top:.25em}
+.dfn-panel ul a[href]{color:#333;color:var(--text,#333)}
 .dfn-panel>div{display:flex}
 .dfn-panel a.self-link{font-weight:700;margin-right:auto}
 .dfn-panel .marker{padding:.1em;margin-left:.5em;border-radius:.2em;text-align:center;white-space:nowrap;font-size:90%;color:#040b1c}
@@ -64,7 +64,6 @@ cite .bibref{font-style:normal}
 a[href].orcid{padding-left:4px;padding-right:4px}
 a[href].orcid>svg{margin-bottom:-2px}
 .toc a,.tof a{text-decoration:none}
-a .figno,a .secno{color:#000}
 ol.tof,ul.tof{list-style:none outside none}
 .caption{margin-top:.5em;font-style:italic}
 table.simple{border-spacing:0;border-collapse:collapse;border-bottom:3px solid #005a9c}
@@ -105,8 +104,8 @@ dd{margin-left:0}
 <style>
 var{position:relative;cursor:pointer}
 var[data-type]::after,var[data-type]::before{position:absolute;left:50%;top:-6px;opacity:0;transition:opacity .4s;pointer-events:none}
-var[data-type]::before{content:"";transform:translateX(-50%);border-width:4px 6px 0 6px;border-style:solid;border-color:transparent;border-top-color:#000}
-var[data-type]::after{content:attr(data-type);transform:translateX(-50%) translateY(-100%);background:#000;text-align:center;font-family:"Dank Mono","Fira Code",monospace;font-style:normal;padding:6px;border-radius:3px;color:#daca88;text-indent:0;font-weight:400}
+var[data-type]::before{content:"";transform:translateX(-50%);border-width:4px 6px 0 6px;border-style:solid;border-color:transparent;border-top-color:#222}
+var[data-type]::after{content:attr(data-type);transform:translateX(-50%) translateY(-100%);background:#222;text-align:center;font-family:"Dank Mono","Fira Code",monospace;font-style:normal;padding:6px;border-radius:3px;color:#daca88;text-indent:0;font-weight:400}
 var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
 </style>
 <script id="initialUserConfig" type="application/json">{
@@ -150,15 +149,15 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
   "group": "apa",
   "github": "w3c/ctaur",
   "maxTocLevel": 4,
-  "publishISODate": "2024-03-10T00:00:00.000Z",
-  "generatedSubtitle": "W3C Editor's Draft 10 March 2024"
+  "publishISODate": "2024-03-20T00:00:00.000Z",
+  "generatedSubtitle": "W3C Editor's Draft 20 March 2024"
 }</script>
 <link rel="stylesheet" href="https://www.w3.org/StyleSheets/TR/2021/W3C-ED"></head>
   <body class="h-entry informative"><div class="head">
     <p class="logos"><a class="logo" href="https://www.w3.org/"><img crossorigin="" alt="W3C" height="48" src="https://www.w3.org/StyleSheets/TR/2021/logos/W3C" width="72">
   </a></p>
     <h1 id="title" class="title">Collaboration Tools Accessibility User Requirements</h1> 
-    <p id="w3c-state"><a href="https://www.w3.org/standards/types#ED">W3C Editor's Draft</a> <time class="dt-published" datetime="2024-03-10">10 March 2024</time></p>
+    <p id="w3c-state"><a href="https://www.w3.org/standards/types#ED">W3C Editor's Draft</a> <time class="dt-published" datetime="2024-03-20">20 March 2024</time></p>
     <details open="">
       <summary>More details about this document</summary>
       <dl>
@@ -304,11 +303,11 @@ Terms
   <p>Collaboration tools differ widely in the nature of content that may be edited. They also differ widely in the user interfaces presented to users. For example:</p>
 	  <ul>
 		  <li>Word processors typically provide a <q>what you see is what you get</q> (<abbr title="what you see is what you get"><a href="#dfn-wysiwyg" class="internalDFN" data-link-type="dfn" id="ref-for-dfn-wysiwyg-1"><abbr title="what you see is what you get">wysiwyg</abbr></a></abbr>) interface based on a rendered view of the content.</li>
-		  <li>Editors designed for source code or markup language text development do not. In the latter case, indentation and syntax highlighting may be the only visual cues provided to the structure of the code or markup available in the editing environment.</li>
-		  <li>Candidate video renditions may be played in side by side windows for purposes of comparison and editing decisioning.</li>
-		  <li>By its very nature audio alternatives must be played serially, and their distinctions remembered in the comparison and decisioning process.</li>
+		  <li>Editors designed for source code or markup language text development do not provide a rendered view. In these applications,, indentation and syntax highlighting may be the only visual cues provided to the structure of the code or markup available in the editing environment.</li>
+		  <li>In collaborative video editors, candidate video renditions may be played in side by side windows for purposes of comparison and editing decisioning.</li>
+		  <li>By their very nature, audio alternatives presented in music or sound editing environments must be played serially, and their distinctions remembered by the user in the comparison and decisioning process.</li>
 	  </ul>
-    <p>Collaboration tools that support editing of graphics, mathematical notation, or other content types are also within the scope of this document. However, only the collaboration-related aspects of such systems are addressed here. The accessibility issues arising from creating and editing these types of content are not considered, as they are separate problems from the user needs associated with the collaborative features of the tools.</p>
+    <p>As the preceding cases suggest, collaboration tools are not restricted by the kind of content that may be edited. Thus, tools that support editing of static images, mathematical notation, or other content types are also within the scope of this document. However, only the collaboration-related aspects of such systems are addressed here. The accessibility issues arising from creating and editing different types of content are not considered in this document, as they are separate problems from the user needs associated with the collaborative features of the tools.</p>
     <p>Nevertheless it is important that collaborative tools support the full range of editing functions associated with making web content accessible. Among others this would include the ability to add
 	  headings, provide alternative text for images and add captions to videos.</p>
     <p>Some collaboration tools support accessibility by mapping unique keyboard commands. Some also organize their feature options in unique menus or uniquely located menus. We prefer collaboration tools that utilize standard menu organization and typical keyboard commands now well known to users from the stand-alone desktop environment. Standard controls require far less learning
@@ -343,7 +342,7 @@ Terms
 <dl>
 
 <dt><dfn data-lt="WYSIWYG|WYSIWYG" id="dfn-wysiwyg" tabindex="0" aria-haspopup="dialog" data-dfn-type="dfn">WYSIWYG</dfn></dt>
-<dd>An acronym for <q>What You See Is What You Get</q>. As described by <a href="https://en.wikipedia.org/wiki/WYSIWYG">Wikipedia</a>, 
+<dd>An acronym for <q>What You See Is What You Get</q>. As described by <a href="https://en.wikipedia.org/wiki/WYSIWYG">Wikipedia</a>,
 it <q>refers to software which allows content to be edited in a form that resembles its appearance when printed or displayed as a finished
 product, such as a printed document, web page, or slide presentation. WYSIWYG implies a user interface that allows the user to view something very similar to the result while the document is being created.</q>
 </dd>
