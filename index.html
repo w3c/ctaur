@@ -23,7 +23,7 @@
     </section>
     </section>
 
-    <section>
+    <section id="intro">
       <h2>Introduction</h2>
       <section id="collaboration-tools">
         <h3>What are collaboration tools?</h3>
@@ -37,7 +37,7 @@
           <li>A wiki that supports version control, for example by enabling authors to revert to prior versions of a page or to view the differences between two versions.</li>
 	  <li>A midi or audio editing application that allows real-time synchronous audio content editing, or asynchronous content editing. Collaborators hear edited content on demand during a teleconference editing session or on content refresh when editing asynchronously.</li>
         </ul>
-      </section>
+      </section id="collab-distinctive">
       <section id="distinctive-features">
         <h3>Distinctive features of collaboration tools</h3>
         <p>This document focuses primarily on features unique to collaboration tools, rather than features which they share with other Web applications or with application software in general. Indeed, any tool that provides one or more of the features enumerated here may benefit from the user needs and corresponding requirements elaborated in the sections that follow.</p>
@@ -74,13 +74,13 @@
     from the user, whereas specific accessibility modes with custom keyboard commands, and with menus that shift their location on screen pose significantly steep learning challenges to most users with disabilities, not just
     users with cognitive and learning disabilities.</p>
       </section>
-      <section>
+      <section id="scope">
         <h3>Scope and Applicability of this Document</h3>
         <p>Accessibility-related guidance provided in this document is applicable to a wide variety of tools. No unnecessary restriction is placed on the types of Web-based software to which it may reasonably be applied.</p>
         <p>If a tool implements one or more of the distinctive features described in section <a href="#distinctive-features"></a>, then the guidance in this document which addresses each such supported feature is relevant and applicable to the tool. Thus, the scope of the document includes any tool implemented using Web technologies that implements at least one of the distinctive features for which guidance is offered in the sections that follow.</p>
         <p>For example, an annotation tool supporting the association of shared comments with selected text in Web pages would offer only a single feature described in this document. For this reason, only section <a href="#annotations">Annotations</a> would be relevant to the tool.</p>
       </section>
-            <section>
+            <section id="collab-a11y">
 		            <h3>Collaboration tools and accessibility</h3>
 	<p>By following established guidance, notably that of <cite>Web Content Accessibility Guidelines (WCAG)</cite> [[wcag22]], designers of collaboration tools can help ensure that their user interfaces are <em>perceivable</em> to and <em>operable</em> by a wide range of users with disabilities. Following the Guidelines also enables user interfaces to be more <em>understandable</em>, and to be <em>robust</em> in their support for a range of user agents and assistive technologies. In addition, guidance of a general nature on improving accessibility for people with cognitive and learning disabilities has been published in [[coga-usable]]. However, implementing current guidelines and suggested practices is not sufficient by itself to ensure that the user interface of a collaboration tool can be understood and used efficiently by people with disabilities. Thus, conforming to WCAG may well be insufficient for collaborative environments. For example WCAG does not inform automated interface simplification &mdash; a general web accessibility requirement being considered in APA&apos;s <a href="https://www.w3.org/WAI/APA/task-forces/adapt/">WAI-Adapt Task Force</a>.</p>
         <p>The collaboration features of these tools are necessarily complex. This can impose significant cognitive demands on many users, not only users with specialized accessibility requirements. This is especially true  for users of screen readers, screen magnification and color contrast assistive technologies, as well as for persons living with various cognitive and learning disabilities. Many users cannot track updates on multiple locations simultaneously, Rather, they must view and comprehend the interactive elements of the application&apos;s features  sequentially, for example in speech or braille for screen reader users. A screen reader or magnifier used in a collaborative application may well present suggested changes and comments in one section of the screen while the user is reading a document in a word processor. The user may also be expected to be communicating verbally with fellow collaborators (e.g., in a meeting) while undertaking editing tasks. Moreover, at any time, incoming changes made by collaborators may alter the text that the user is reading or editing in real time.</p>
@@ -111,11 +111,11 @@ product, such as a printed document, web page, or slide presentation. WYSIWYG im
 
     </section>
 
-    <section>
+    <section id="need-definition">
       <h2>User need definition</h2>
       <p>Specific user needs are frequently defined both by   task required to achieve a particular goal and also by environmental conditions. Context matters. For example, the cognitive demands imposed by interacting with the collaboration-related features of an application depend not only on the needs and capabilities of the user, including the possible presence of assistive technology, but also on the context. A collaborative task that the user can perform independently while working alone in a distraction-free environment may become cognitively burdensome if performed in a situation such as a meeting. Working with comments and suggested changes in a document may become more cognitively demanding if other authors are simultaneously editing the same content, and the user needs to be aware of their activities (e.g., to avoid introducing conflicting changes) while still performing the editing task. The use of different input types and methods, such as speech input or switch-based input, can affect the amount of time required to enter and edit text, as well as the user&apos;s ability to respond to potentially disruptive changes introduced by collaborators.'</p>
     </section>
-    <section>
+    <section id="synchronous">
       <h2>Real-Time co-editing</h2>
       <ul>
         <li><strong>User Need 1:</strong> Users need to be able to discover the presence of collaborators who are reading or editing the content.</li>
@@ -172,14 +172,14 @@ product, such as a printed document, web page, or slide presentation. WYSIWYG im
           <li><strong>REQ 12:</strong> Use distinctions other than color to identify inserted and deleted text in the visual interface as required by WCAG 2.2 <a href="https://www.w3.org/WAI/WCAG22/Understanding/use-of-color">Success Criterion 1.4.1: Use of Color</a>.</li>
         </ul>
       </section>
-      <section>
+      <section id="diff">
         <h3>Presenting Differences Between Revisions</h3>
         <ul>
           <li><strong>User Need 13:</strong> Users need to be able to compare revisions in meaningful units (words, sentences, lines, etc.), according to the nature of the content, to maximize comprehension.</li>
           <li><strong>REQ 13:</strong> Present differences in a manner that is appropriate to the type of content. For example, software source code might be presented with line-by-line differences, whereas natural language documents might be presented with differences shown word-by-word or sentence-by-sentence.</li>
         </ul>
       </section>
-      <section>
+      <section id="summation">
         <h3>Summarizing Effect of Revisions</h3>
         <ul>
           <li><strong>User Need 14:</strong> Users with learning or cognitive disabilities, and users of assistive technologies sometimes need support in identifying revisions and understanding their effects.</li>
@@ -188,7 +188,7 @@ product, such as a printed document, web page, or slide presentation. WYSIWYG im
         <p class="note">Although it may be useful to support automatic summary generation by technologies such as large language models, the state of the art as of the time of publication suggests implementers should exercise caution. Inaccurate summaries of changes may be worse for users than their absence. For this reason, summaries written by human authors are generally preferable to those authored by automated large language models.</p>
       </section>
     </section>
-    <section>
+    <section id="notify">
       <h2>Notifications and Messages</h2>
       <p>Collaboration tools may send notifications to the user for a variety of reasons. For example, a user may be notified if a collaborator asynchronously submits changes to a document or project, or adds a comment. These notifications may be delivered via operating system facilities, or by a messaging service, such as e-mail or an instant message protocol. Moreover, the collaboration tool may support commenting, issue tracking, or other forms of interaction via external messaging. These optional capabilities are addressed in the following user needs and system requirements.</p>
       <ul>
@@ -200,7 +200,7 @@ product, such as a printed document, web page, or slide presentation. WYSIWYG im
         <li><strong>REQ 16C:</strong> If multiple notifications are provided together (e.g., in a single message), ensure that the user can sort the notifications according to reasonable preferences, for example, most recent first, or oldest first. This is applicable, for example, to a series of comments organized as <q>threads</q> of discussion, all delivered in a single summary message to the user.</li>
       </ul>
     </section>
-    <section>
+    <section id="access-control">
       <h2>Access Controls</h2>
       <p>A collaborative environment may provide access controls to restrict the modification of content to specified individuals or groups of users. Moreover, access controls may be applied to the entire content, as in a document which is marked as <em>read-only</em> in a text editor or office application, or they may restrict editing to designated parts. Depending on the capabilities of the application, permissions may be changed by an authorized user during a collaborative editing session.</p>
       <ul>
@@ -213,7 +213,7 @@ product, such as a printed document, web page, or slide presentation. WYSIWYG im
       </ul>
       <p class="note"><cite>Web Content Accessibility Guidelines (WCAG) 2.2</cite> [[wcag22]] should be consulted for guidance on ensuring that the user interface for configuring access controls meets appropriate accessibility requirements.</p>
     </section>
-    <section>
+    <section id="conventions">
       <h2>General Guidance on Implementing Accessibility Features of Collaborative Environments</h2>
       <p>To facilitate effective collaboration, applications should be designed to respect conventions of user interface design that are likely to be expected by users, including those who have disabilities.</p>
       <ul>
