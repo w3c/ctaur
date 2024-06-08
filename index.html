@@ -1,6 +1,6 @@
 <!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 <meta charset="utf-8">
-<meta name="generator" content="ReSpec 35.0.2">
+<meta name="generator" content="ReSpec 35.1.0">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <style>
 .issue-label{text-transform:initial}
@@ -87,7 +87,7 @@ dd{margin-left:0}
 }
 </style>
 <meta name="color-scheme" content="light">
-<meta name="description" content="This document outlines various accessibility-related user needs, requirements and scenarios for both synchronous and asynchronous web-based collaboration tools. These tools typically include one or more specific collaborative features such as
+<meta name="description" content="This document outlines various accessibility-related user needs and requirements for both synchronous and asynchronous web-based collaboration tools based on various collaborative engagement scenarios. These tools typically include one or more specific collaborative features such as
       content editing by multiple authors, support for comments annotations, and revision control in real-time synchronous sessions, or asynchronously. Asynchronous tools are more commonly known as revision control systems rather than collaboration tools though their functionality is otherwise very similar. The Cloud-based office application suites from Google and Microsoft are well-known examples of synchronous, real-time collaboration tools, though they also support asynchronous collaboration. Web tools built on git are well-known example of asynchronous collaboration tools.">
 <style>
 var{position:relative;cursor:pointer}
@@ -137,15 +137,15 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
   "group": "apa",
   "github": "w3c/ctaur",
   "maxTocLevel": 4,
-  "publishISODate": "2024-05-23T00:00:00.000Z",
-  "generatedSubtitle": "W3C Editor's Draft 23 May 2024"
+  "publishISODate": "2024-06-08T00:00:00.000Z",
+  "generatedSubtitle": "W3C Editor's Draft 08 June 2024"
 }</script>
 <link rel="stylesheet" href="https://www.w3.org/StyleSheets/TR/2021/W3C-ED"></head>
   <body class="h-entry informative"><div class="head">
     <p class="logos"><a class="logo" href="https://www.w3.org/"><img crossorigin="" alt="W3C" height="48" src="https://www.w3.org/StyleSheets/TR/2021/logos/W3C" width="72">
   </a></p>
     <h1 id="title" class="title">Collaboration Tools Accessibility User Requirements</h1> 
-    <p id="w3c-state"><a href="https://www.w3.org/standards/types#ED">W3C Editor's Draft</a> <time class="dt-published" datetime="2024-05-23">23 May 2024</time></p>
+    <p id="w3c-state"><a href="https://www.w3.org/standards/types#ED">W3C Editor's Draft</a> <time class="dt-published" datetime="2024-06-08">08 June 2024</time></p>
     <details open="">
       <summary>More details about this document</summary>
       <dl>
@@ -201,7 +201,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
     <hr title="Separator for header">
   </div>
     <section id="abstract" class="introductory"><h2>Abstract</h2>
-      <p>This document outlines various accessibility-related user needs, requirements and scenarios for both synchronous and asynchronous web-based collaboration tools. These tools typically include one or more specific collaborative features such as
+      <p>This document outlines various accessibility-related user needs and requirements for both synchronous and asynchronous web-based collaboration tools based on various collaborative engagement scenarios. These tools typically include one or more specific collaborative features such as
       content editing by multiple authors, support for comments annotations, and revision control in real-time synchronous sessions, or asynchronously. Asynchronous tools are more commonly known as revision control systems rather than collaboration tools though their functionality is otherwise very similar. The Cloud-based office application suites from Google and Microsoft are well-known examples of synchronous, real-time collaboration tools, though they also support asynchronous collaboration. Web tools built on git are well-known example of asynchronous collaboration tools.</p>
       <p>The accessibility user needs and requirements described in this document may be implemented in the collaboration tool itself, or in an assistive technology application such as a screen reader or screen magnifier. Widely used desktop applications such as word processors and spread sheets also commonly support collaboration features. We take a holistic approach to give foremost priority to the user's perspective, leading to the identification of features and solutions that may be implemented by different components of the software stack involved in performing a collaborative task.</p>
       <p>Although the user needs and requirements identified in this document <em>are non-normative</em>, they may influence the development of future accessibility guidelines, normative technical specifications, or features of collaboration tools and assistive technologies. They are relevant to software developers who contribute to the collaborative experience.</p>
@@ -283,7 +283,7 @@ Terms
           <dt>Comparing revisions</dt>
           <dd>Some systems can display the differences between revisions of content for purposes of comparison.</dd>
           <dt>Suggested changes</dt>
-          <dd>Some word processors can show changes (insertions, deletions and formatting-related modifications) made by collaborators, which an author can choose to accept or reject. These revisions are sometimes referred to as <dfn id="dfn-suggested-changes" tabindex="0" aria-haspopup="dialog" data-dfn-type="dfn">suggested changes</dfn> or as <dfn id="dfn-tracked-changes" tabindex="0" aria-haspopup="dialog" data-dfn-type="dfn">tracked changes</dfn>. Each change may be accompanied by metadata, for example the identity of the author who made the change, and a time stamp.</dd>
+          <dd>Some word processors can show changes (insertions, deletions and formatting-related modifications) made by collaborators, which an editor can choose to accept or reject. These revisions are sometimes referred to as <dfn id="dfn-suggested-changes" tabindex="0" aria-haspopup="dialog" data-dfn-type="dfn">suggested changes</dfn> or as <dfn id="dfn-tracked-changes" tabindex="0" aria-haspopup="dialog" data-dfn-type="dfn">tracked changes</dfn>. Each change may be accompanied by metadata, for example the identity of the author who made the change, and a time stamp.</dd>
           <dt>Access controls</dt>
           <dd>Some collaborative environments support <em>access controls</em>, allowing restrictions to be imposed on modification of part or all of the content. Permission to modify content may be granted on a granular basis to specific individuals or to groups of users. For example, in a collaborative tool for creating fillable forms, some users may only be allowed to change the values of input fields (i.e., to complete a form), whereas others may be free to edit any aspect of the document, including the addition, deletion and rearrangement of form fields.</dd>
 	</dl>
@@ -305,7 +305,7 @@ Terms
 
     <section id="need-definition"><div class="header-wrapper"><h3 id="x1-3-defining-user-needs"><bdi class="secno">1.3 </bdi>Defining User needs</h3><a class="self-link" href="#need-definition" aria-label="Permalink for Section 1.3"></a></div>
       
-      <p>Specific user needs are frequently defined both by   task required to achieve a particular goal and also by environmental conditions. Context matters. For example, the cognitive demands imposed by interacting with the collaboration-related features of an application depend not only on the needs and capabilities of the user, including the possible presence of assistive technology, but also on the context. A collaborative task that the user can perform independently while working alone in a distraction-free environment may become cognitively burdensome if performed in a situation such as a meeting. Working with comments and suggested changes in a document may become more cognitively demanding if other authors are simultaneously editing the same content, and the user needs to be aware of their activities (e.g., to avoid introducing conflicting changes) while still performing the editing task. The use of different input types and methods, such as speech input or switch-based input, can affect the amount of time required to enter and edit text, as well as the user's ability to respond to potentially disruptive changes introduced by collaborators.'</p>
+      <p>Specific user needs are frequently defined both by   task required to achieve a particular goal and also by environmental conditions. Context matters. For example, the cognitive demands imposed by interacting with the collaboration-related features of an application depend not only on the needs and capabilities of the user, including the possible presence of assistive technology, but also on the context. A collaborative task that the user can perform independently while working alone in a distraction-free environment may quickly become cognitively burdensome when performed during a working teleconference session. Working with comments and suggested changes becomes more cognitively demanding when other authors are simultaneously editing the same content, and the user needs to be aware of their activities (e.g., to avoid introducing conflicting changes) while still performing the editing task. The use of different input types and methods, such as speech input or switch-based input, can significantly affect the amount of time required to enter and edit text, as well as the user's ability to respond to potentially disruptive changes introduced by collaborators.'</p>
     </section>
             <section id="collab-a11y"><div class="header-wrapper"><h3 id="x1-4-collaboration-tools-and-accessibility"><bdi class="secno">1.4 </bdi>Collaboration tools and accessibility</h3><a class="self-link" href="#collab-a11y" aria-label="Permalink for Section 1.4"></a></div>
 		            
@@ -314,7 +314,7 @@ Terms
         <p>Many users cannot track updates on multiple locations simultaneously, rather, they must view and comprehend the interactive elements of the application's features  sequentially, for example in speech or braille for screen reader users. A screen reader or magnifier used in a collaborative application may well present suggested changes and comments in one section of the screen while the user is reading a document in a word processor. The user may also be expected to be communicating verbally with fellow collaborators (e.g., in a meeting) while undertaking editing tasks or comparing multiple revisions of content. Moreover, in applications supporting real-time collaborative editing, incoming changes made by other contributors may alter the content that the user is reading or editing in real time. These cognitive demands can be particularly challenging if a person is working with a user interface that is unfamiliar, whether it be an application or an assistive technology.</p>
         <p>Due to the cognitive demands created by collaboration tools in the practical and social contexts in which they are used, strategies for improving accessibility are desirable that extend beyond current <abbr title="World Wide Web Consortium">W3C</abbr> guidance as documented elsewhere.</p>
 	<p>Thus when we talk about collaborative tools we must consider accessibility burdens imposed by their
-	concomitant complexity. In truth, collaborative tools are necessarily complex interfaces for all users, and not only persons with various disabilities. The salient point here is that the failure to design to accomodate persons with disabilities can well prevent their participation in collaborative work. What constitutes challenging complexity for most users will inevitably become a showstopper for some persons with disabilities.</p>
+	concomitant complexity. In truth, collaborative tools are necessarily complex interfaces for all users, and not only persons with various disabilities. The salient point here is that a failure to design to accomodate persons with disabilities appropriately will inevitably prevent their participation in collaborative work. What constitutes challenging complexity for most users will inevitably become an insurmountable barrier for some persons with disabilities.</p>
 
 	<p>A fairly common accessibility failure is the use of arbitrary color to flag edits put forth by different collaborators. However, identifying collaborators only by colorization  violates WCAG 2.2 Success Criterion 1.4.1 as described below in <a href="#version-control-changes">User Need 11</a>.</p>
       </section>
