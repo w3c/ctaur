@@ -1,6 +1,6 @@
 <!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 <meta charset="utf-8">
-<meta name="generator" content="ReSpec 35.1.1">
+<meta name="generator" content="ReSpec 35.1.2">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <style>
 .issue-label{text-transform:initial}
@@ -137,15 +137,15 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
   "group": "apa",
   "github": "w3c/ctaur",
   "maxTocLevel": 4,
-  "publishISODate": "2024-07-17T00:00:00.000Z",
-  "generatedSubtitle": "W3C Editor's Draft 17 July 2024"
+  "publishISODate": "2024-10-30T00:00:00.000Z",
+  "generatedSubtitle": "W3C Editor's Draft 30 October 2024"
 }</script>
 <link rel="stylesheet" href="https://www.w3.org/StyleSheets/TR/2021/W3C-ED"></head>
   <body class="h-entry informative"><div class="head">
     <p class="logos"><a class="logo" href="https://www.w3.org/"><img crossorigin="" alt="W3C" height="48" src="https://www.w3.org/StyleSheets/TR/2021/logos/W3C" width="72">
   </a></p>
     <h1 id="title" class="title">Collaboration Tools Accessibility User Requirements</h1> 
-    <p id="w3c-state"><a href="https://www.w3.org/standards/types#ED">W3C Editor's Draft</a> <time class="dt-published" datetime="2024-07-17">17 July 2024</time></p>
+    <p id="w3c-state"><a href="https://www.w3.org/standards/types#ED">W3C Editor's Draft</a> <time class="dt-published" datetime="2024-10-30">30 October 2024</time></p>
     <details open="">
       <summary>More details about this document</summary>
       <dl>
@@ -452,12 +452,15 @@ user automatically to generate a summary for themselves of content or of a comme
       
       <p>To facilitate effective collaboration, applications should be designed to respect conventions of user interface design that are likely to be expected by users, including those who have disabilities.</p>
       <ul>
-        <li><strong>User Need 19:</strong> Users with learning or cognitive disabilities or who use assistive technologies need to be able to learn collaboration tools efficiently, including software with which they are unfamiliar and which is necessary to the task at hand.</li>
+        <li><strong>User Need 19:</strong> Users with learning or cognitive disabilities or who use assistive technologies need to be able to learn collaboration tools efficiently, including software with which they are unfamiliar and which is necessary to the task at hand. In some cases, they need to be able to use already familiar software to complete a collaborative task.</li>
         <li><strong>REQ 19A:</strong> In implementing collaboration features, follow established user interface conventions and design patterns. For example, use conventional terminology, labels, or icons for functionality that may be familiar to users.</li>
         <li><strong>REQ 19B:</strong> Support the accessibility-related features of the user's operating system, user agent, and assistive technology. For example, some assistive technologies, such as screen readers, have features designed specifically for reading comments and suggested changes in textual content, which should be supported instead of defining application-specific functionality or keyboard commands that achieve the same purpose.</li>
-        <li><strong>REQ 19C:</strong>Make collaborative features available via an <abbr title="application programming interface">API</abbr> to allow interoperability with tools with which the user may be familiar, and which may better satisfy a person's specific accessibility-related needs. For example, a revision control system could interoperate via an <abbr>API</abbr> with a user's chosen text editor or integrated development environment.</li>
+        <li><strong>REQ 19C:</strong>Make collaborative features available via an <abbr title="application programming interface">API</abbr> to allow interoperability with tools with which the user may already be familiar, and which may better satisfy a person's specific accessibility-related needs. For example, a revision control system could interoperate via an <abbr>API</abbr> with a user's chosen text editor or integrated development environment.</li>
       </ul>
-      <div class="note" role="note" id="issue-container-generatedID-4"><div role="heading" class="note-title marker" id="h-note-3" aria-level="3"><span>Note</span></div><p class="">Provision of an <abbr>API</abbr> does not diminish the importance of ensuring that user interfaces provided by the application satisfy accessibility requirements. Nor is REQ 19C applicable to all collaborative environments. For example, some applications are highly dependent on editing functions specific to the tool itself, and should not be expected to interoperate with external editors.</p></div>
+      <div class="note" role="note" id="issue-container-generatedID-4"><div role="heading" class="note-title marker" id="h-note-3" aria-level="3"><span>Note</span></div><aside class="">
+      <p>Provision of an <abbr>API</abbr> does not diminish the importance of ensuring that user interfaces provided by the application satisfy accessibility requirements. Nor is REQ 19C applicable to all collaborative environments. For example, some applications are highly dependent on editing functions specific to the tool itself, and should not be expected to interoperate with external editors.</p>
+      <p>Note that learning an unfamiliar user interface is difficult or impossible for some people with learning or cognitive disabilities. Consequently, offering interoperability via an <abbr>API</abbr> with tools that are already familiar to the user  can remove otherwise insurmountable barriers to access in such cases.</p>
+      </aside></div>
     </section>
   
 
