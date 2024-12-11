@@ -63,10 +63,15 @@ var respecConfig = {
 	// This is optional, uncomment if you have authors as well as editors.
 	// only "name" is required. Same format as editors.
 
-	//authors:  [
-	//    { name: "Your Name", url: "http://example.org/",
-	//      company: "Your Company", companyURI: "http://example.com/" },
-	//],
+	authors:  [
+      {
+        name: "Lisa Seeman-Horwitz",
+        url: 'http://athena-ict.com',
+        mailto: "lisa.seeman@zoho.com",
+        company: "Invited expert",
+        w3cid: 16320
+      }
+],
 
 	/*
 	alternateFormats: [
