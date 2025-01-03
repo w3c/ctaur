@@ -43,6 +43,7 @@ var respecConfig = {
 		{
 			name: "Jason White",
 			mailto: "jason@jasonjgw.net",
+			url: "https://jasonjgw.net/",
 			w3cid: 74028
 		},
 		{
@@ -64,7 +65,25 @@ var respecConfig = {
 	// only "name" is required. Same format as editors.
 
 	authors:  [
-      {
+      		{
+			name: "Jason White",
+			url: "https://jasonjgw.net/",
+			mailto: "jason@jasonjgw.net",
+			w3cid: 74028
+		},
+		{
+			name: "Janina Sajka",
+			url: "http://rednote.net/",
+			w3cid: 33688
+		},
+		{
+			name: "Scott Hollier",
+			mailto: "scott.hollier@accessibility.org.au",
+			company: "Centre for Accessibility Australia",
+			companyURI: "https://www.accessibility.org.au/",
+			w3cid: 43274
+		},
+{
         name: "Lisa Seeman-Horwitz",
         url: 'http://athena-ict.com',
         mailto: "lisa.seeman@zoho.com",
