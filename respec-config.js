@@ -44,11 +44,14 @@ var respecConfig = {
 			name: "Jason White",
 			mailto: "jason@jasonjgw.net",
 			url: "https://jasonjgw.net/",
+			company: "Invited expert",
 			w3cid: 74028
 		},
 		{
 			name: "Janina Sajka",
 			url: "http://rednote.net/",
+			mailto: "janina@rednote.net",
+			company: "Invited expert",
 			w3cid: 33688
 		},
 		{
@@ -69,11 +72,14 @@ var respecConfig = {
 			name: "Jason White",
 			url: "https://jasonjgw.net/",
 			mailto: "jason@jasonjgw.net",
+			company: "Invited expert",
 			w3cid: 74028
 		},
 		{
 			name: "Janina Sajka",
 			url: "http://rednote.net/",
+			mailto: "janina@rednote.net",
+			company: "Invited expert",
 			w3cid: 33688
 		},
 		{
