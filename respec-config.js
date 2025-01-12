@@ -10,7 +10,7 @@ var respecConfig = {
 	tocIntroductory: true,
 	lint: { "no-unused-dfns": false },
 	// specification status (e.g., WD, LC, NOTE, etc.). If in doubt use ED.
-	specStatus: "ED",
+	specStatus: "DNOTE",
 	//crEnd:                "",
 	//perEnd:               "",
 	diffTool: "http://www.aptest.com/standards/htmldiff/htmldiff.pl",
