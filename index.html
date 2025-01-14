@@ -95,7 +95,7 @@ Thus when we talk about collaborative tools we must consider accessibility burde
     </section>
 
     <section id="synchronous">
-      <h2>Real-Time Co-editing</h2>
+      <h2>Real-time Co-editing</h2>
       <ul>
         <li><strong>User Need 1:</strong> Users need to be able to discover the presence of collaborators who are reading or editing the content.</li>
         <li><strong>REQ 1:</strong> Provide a mode of operation in which <em>status messages</em> alert the user whenever a collaborator opens or closes an interactive session involving the same content that the user is accessing (e.g., the same document).</li>
@@ -103,17 +103,13 @@ Thus when we talk about collaborative tools we must consider accessibility burde
       <p class="note">WCAG requires that status messages be made available to assistive technologies. See <cite>Web Content Accessibility Guidelines (WCAG) 2.2</cite> [[wcag22]], success criterion 4.1.3, and the associated definition of <em>status message</em>.</p>
       <ul>
         <li><strong>User Need 2:</strong> An assistive technology user needs to be informed in real time of changes to the content being made by collaborators.</li>
-        <li><strong>REQ 2:</strong> Provide a mode of operation in which status messages inform the assistive technology user of insertions, deletions or formatting-related changes made by collaborators as they occur. Limiting these notifications to a content span currently focused by the user is also an advisable option.</li>
+        <li><strong>REQ 2:</strong> Provide a mode of operation in which status messages inform the assistive technology user of insertions, deletions, or formatting-related changes made by collaborators as they occur. Limiting these notifications to a content span currently focused by the user is also an advisable option.</li>
         <li><strong>User Need 3:</strong> Users with learning or cognitive disabilities  and assistive technology users need the ability to read or edit without being distracted or overwhelmed by status messages.</li>
-        <li><strong>REQ 3:</strong> Provide a mode of operation in which status messages informing the user of the presence or activities of collaborators are suppressed. This may be achieved by allowing the user selectively to enable and disable specific types of status message, to messages relating to a specific span of content, or all such messages.</li>
+        <li><strong>REQ 3:</strong> Provide a mode of operation in which status messages informing the user of the presence or activities of collaborators are suppressed. This may be achieved by allowing the user selectively to enable and disable specific types of status messages, to messages relating to a specific span of content, or all such messages.</li>
         <li><strong>User Need 4:</strong> An assistive technology user needs the ability to track changes introduced by a specific collaborator as they are made.</li>
         <li><strong>REQ 4:</strong> Provide a function that moves and tracks user&apos;s
-        focus to the location where a specific collaborator
-        is editing. If there are multiple active collaborators, then multiple
-        such commands, or a menu of active content editors, should be available.</li>
-        <li><strong>User Need 5:</strong> Users with vision, cognitive or
-        physical disabilities need to be able to edit content without
-        the distraction of contemperaneous edits being introduced by other collaborators.</li>
+        focus to the location where a specific collaborator is editing. If there are multiple active collaborators, then multiple such commands, or a menu of active content editors, should be available.</li>
+        <li><strong>User Need 5:</strong> Users with vision, cognitive, or physical disabilities need to be able to edit content without the distraction of contemperaneous edits being introduced by other collaborators.</li>
         <li><strong>REQ 5A:</strong> Provide a mode of operation in which changes made by collaborators are not displayed while any individual collaborator is editing and include some notification semaphore to indicate at least one collaborator is editing, or</li>
         <li><strong>REQ 5B:</strong> Provide a mode of operation in which the component of the content that the user is editing (e.g., the paragraph, section, semantic unit of source code, or graphical object) can only be changed by one collaborator at a time, preventing others from making simultaneous modifications to the same component and flag this status to all collaborators while the lock is active.</li>
       </ul>
