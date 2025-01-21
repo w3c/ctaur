@@ -10,7 +10,7 @@ var respecConfig = {
 	tocIntroductory: true,
 	lint: { "no-unused-dfns": false },
 	// specification status (e.g., WD, LC, NOTE, etc.). If in doubt use ED.
-	specStatus: "ED",
+	specStatus: "NOTE",
 	//crEnd:                "",
 	//perEnd:               "",
 	diffTool: "http://www.aptest.com/standards/htmldiff/htmldiff.pl",
@@ -42,7 +42,6 @@ var respecConfig = {
 	editors: [
 		{
 			name: "Jason White",
-			mailto: "jason@jasonjgw.net",
 			url: "https://jasonjgw.net/",
 			company: "Invited expert",
 			w3cid: 74028
@@ -50,15 +49,13 @@ var respecConfig = {
 		{
 			name: "Janina Sajka",
 			url: "http://rednote.net/",
-			mailto: "janina@rednote.net",
 			company: "Invited expert",
 			w3cid: 33688
 		},
 		{
 			name: "Scott Hollier",
-			mailto: "scott.hollier@accessibility.org.au",
 			company: "Centre for Accessibility Australia",
-			companyURI: "https://www.accessibility.org.au/",
+			url: "https://www.accessibility.org.au/",
 			w3cid: 43274
 		},
 	],
@@ -71,28 +68,24 @@ var respecConfig = {
       		{
 			name: "Jason White",
 			url: "https://jasonjgw.net/",
-			mailto: "jason@jasonjgw.net",
 			company: "Invited expert",
 			w3cid: 74028
 		},
 		{
 			name: "Janina Sajka",
 			url: "http://rednote.net/",
-			mailto: "janina@rednote.net",
 			company: "Invited expert",
 			w3cid: 33688
 		},
 		{
 			name: "Scott Hollier",
-			mailto: "scott.hollier@accessibility.org.au",
 			company: "Centre for Accessibility Australia",
-			companyURI: "https://www.accessibility.org.au/",
+			url: "https://www.accessibility.org.au/",
 			w3cid: 43274
 		},
 {
         name: "Lisa Seeman-Horwitz",
         url: 'http://athena-ict.com',
-        mailto: "lisa.seeman@zoho.com",
         company: "Invited expert",
         w3cid: 16320
       }
